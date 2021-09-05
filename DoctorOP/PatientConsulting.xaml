@@ -1,0 +1,244 @@
+﻿<Window x:Class="DoctorOP.PatientConsulting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorOP"
+        mc:Ignorable="d" Width="1300" Height="768"
+        Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+    <Grid>
+        <TabControl x:Name="Tab_Control">
+            <TabItem x:Name="Tab0" Header="Patient Info" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="270"></RowDefinition>
+                        <RowDefinition Height="180"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                             <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Patient Detail" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="2" Grid.Column="0" Content="Patient Name" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="3" Grid.Column="0" Content="Mobile" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="4" Grid.Column="0" Content="Occupation" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" Content="Address" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="2" Grid.Column="2" Content="City" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="3" Grid.Column="2" Content="District" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="4" Grid.Column="2" Content="Pincode" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                        <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <TextBox x:Name="txt_mobile" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <TextBox x:Name="txt_occupation" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <TextBox x:Name="txt_address" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <TextBox x:Name="txt_city" Grid.Row="2" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        <ComboBox x:Name="cmb_district" Grid.Row="3" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2">
+                            <ComboBoxItem>Select</ComboBoxItem>
+                            <ComboBoxItem>Ariyalur</ComboBoxItem>
+                            <ComboBoxItem>Chengalpattu</ComboBoxItem>
+                            <ComboBoxItem>Chennai</ComboBoxItem>
+                            <ComboBoxItem>Coimbatore</ComboBoxItem>
+                            <ComboBoxItem>Cuddalore</ComboBoxItem>
+                            <ComboBoxItem>Dharmapuri</ComboBoxItem>
+                            <ComboBoxItem>Dindigul</ComboBoxItem>
+                            <ComboBoxItem>Erode</ComboBoxItem>
+                            <ComboBoxItem>Kallakurichi</ComboBoxItem>
+                            <ComboBoxItem>Kanchipuram</ComboBoxItem>
+                            <ComboBoxItem>Kanyakumari</ComboBoxItem>
+                            <ComboBoxItem>Karur</ComboBoxItem>
+                            <ComboBoxItem>Krishnagiri</ComboBoxItem>
+                            <ComboBoxItem>Madurai</ComboBoxItem>
+                            <ComboBoxItem>Nagapattinam</ComboBoxItem>
+                            <ComboBoxItem>Namakkal</ComboBoxItem>
+                            <ComboBoxItem>Nilgiris</ComboBoxItem>
+                            <ComboBoxItem>Perambalur</ComboBoxItem>
+                            <ComboBoxItem>Pudukkottai</ComboBoxItem>
+                            <ComboBoxItem>Ramanathapuram</ComboBoxItem>
+                            <ComboBoxItem>Ranipet</ComboBoxItem>
+                            <ComboBoxItem>Salem</ComboBoxItem>
+                            <ComboBoxItem>Sivaganga</ComboBoxItem>
+                            <ComboBoxItem>Tenkasi</ComboBoxItem>
+                            <ComboBoxItem>Thanjavur</ComboBoxItem>
+                            <ComboBoxItem>Theni</ComboBoxItem>
+                            <ComboBoxItem>Thoothukudi</ComboBoxItem>
+                            <ComboBoxItem>Tiruchirappalli</ComboBoxItem>
+                            <ComboBoxItem>Tirunelveli</ComboBoxItem>
+                            <ComboBoxItem>Tirupathur</ComboBoxItem>
+                            <ComboBoxItem>Tiruppur</ComboBoxItem>
+                            <ComboBoxItem>Tiruvallur</ComboBoxItem>
+                            <ComboBoxItem>Tiruvannamalai</ComboBoxItem>
+                            <ComboBoxItem>Tiruvarur</ComboBoxItem>
+                            <ComboBoxItem>Vellore</ComboBoxItem>
+                            <ComboBoxItem>Viluppuram</ComboBoxItem>
+                            <ComboBoxItem>Virudhunagar</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox x:Name="txt_pincode" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>                        
+                    </Grid>
+                
+                </Border>
+                    <Border Grid.Row="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>                                                              
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Complaint" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Gender" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Eye" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" Content="Cheif Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="2" Grid.Column="2" Content="Other Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_male" Checked="Rbt_male_Checked">Male</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_female" Checked="Rbt_female_Checked">Female</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_other" Checked="Rbt_other_Checked">Other</RadioButton>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_od" Checked="Rbt_od_Checked">OD</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_os" Checked="Rbt_os_Checked">OS</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center"  x:Name="rbt_odos" Checked="Rbt_odos_Checked">Both</RadioButton>
+                            </StackPanel>
+                            <ComboBox x:Name="cmb_ccomplaint" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2">
+                                <ComboBoxItem>Headach</ComboBoxItem>
+                                <ComboBoxItem>Irritation</ComboBoxItem>
+                                <ComboBoxItem>itching</ComboBoxItem>
+                                <ComboBoxItem>Tearing</ComboBoxItem>
+                                <ComboBoxItem>Burning</ComboBoxItem>
+                                <ComboBoxItem>Discharge or stickiness</ComboBoxItem>
+                                <ComboBoxItem>Itching</ComboBoxItem>
+                                <ComboBoxItem>Eye pain</ComboBoxItem>
+                                <ComboBoxItem>Red-eye</ComboBoxItem>
+                                <ComboBoxItem>Cloudy vision</ComboBoxItem>
+                                <ComboBoxItem>Sensitivity to light</ComboBoxItem>
+                                <ComboBoxItem>Poor vision at night</ComboBoxItem>
+                                <ComboBoxItem>Double vision</ComboBoxItem>
+                            </ComboBox>
+                            <TextBox x:Name="txt_ocopmlaint" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        </Grid>
+                    </Border>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btn_tab1_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab1_next_Click"></Button>
+                        <Button x:Name="btn_tab1_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0"></Button>
+                    </StackPanel>
+                    <Border Grid.Row="3" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                               
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Search Patient" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <TextBox x:Name="txt_searchpatient" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" Width="250" HorizontalAlignment="Left"></TextBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Tab1" Header="Refraction">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Source="Scal0180F.png" ></Image>
+                    <Image Grid.Column="1" Source="Scal0180F.png" ></Image>
+                    <Label Grid.Column="0" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="0,40,0,0"></Label>
+                    <Label Grid.Column="1" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="0,40,0,0"></Label>
+                    <Border Grid.Row="1" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OD" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                            <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
+                            <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="1"  Grid.Column="1" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OS" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                            <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
+                            <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                        </Grid>
+                    </Border>
+                    <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btn_tab2_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab2_next_Click"></Button>
+                        <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Tab2" Header="Patient Summary"></TabItem>
+            <TabItem x:Name="Tab3" Header="Payment"></TabItem>
+        </TabControl>
+    </Grid>
+</Window>

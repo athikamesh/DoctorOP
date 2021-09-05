@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>                
+            </Grid.RowDefinitions>
+            <Button x:Name="btn_consulting" Grid.Row="0" Content="Consulting" Margin="0,5" Click="Btn_consulting_Click"></Button>
+            <Button x:Name="btn_medicin" Grid.Row="1" Content="Medicin" Margin="0,5"></Button>
+          
+        </Grid>
+       
     </Grid>
 </Window>

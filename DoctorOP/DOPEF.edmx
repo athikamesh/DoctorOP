@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PatientDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patient_id" Type="nvarchar(max)" />
+          <Property Name="patient_name" Type="varchar(max)" />
+          <Property Name="patient_mobile" Type="varchar(max)" />
+          <Property Name="patient_occupation" Type="varchar(max)" />
+          <Property Name="patient_address" Type="varchar(max)" />
+          <Property Name="patient_city" Type="varchar(max)" />
+          <Property Name="patient_district" Type="varchar(max)" />
+          <Property Name="patient_pincode" Type="varchar(max)" />
+          <Property Name="Visitdate" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="PatientRefraction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="patient_id" Type="varchar(max)" />
+          <Property Name="SPH_OD" Type="varchar(max)" />
+          <Property Name="CYL_OD" Type="varchar(max)" />
+          <Property Name="AXIS_OD" Type="varchar(max)" />
+          <Property Name="VISION_OD" Type="varchar(max)" />
+          <Property Name="SPH_OS" Type="varchar(max)" />
+          <Property Name="CYL_OS" Type="varchar(max)" />
+          <Property Name="AXIS_OS" Type="varchar(max)" />
+          <Property Name="VISION_OS" Type="varchar(max)" />
+          <Property Name="RefDate" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Patientvisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patient_visitid" Type="nvarchar(max)" />
+          <Property Name="patient_id" Type="nvarchar(max)" />
+          <Property Name="patient_name" Type="varchar(max)" />
+          <Property Name="patient_Complaint" Type="varchar(max)" />
+          <Property Name="patient_gender" Type="varchar(max)" />
+          <Property Name="patient_eye" Type="varchar(max)" />
+          <Property Name="Visitdate" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="DOPModelStoreContainer">
+          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PatientDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_district" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_pincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Patientvisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DOPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
+          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
+          <EntitySet Name="PatientRefraction" EntityType="DOPModel.PatientRefraction" />
+        </EntityContainer>
+        <EntityType Name="PatientRefraction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SPH_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CYL_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AXIS_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VISION_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SPH_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CYL_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AXIS_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VISION_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RefDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DOPModelStoreContainer" CdmEntityContainer="DOPEntities">
+          <EntitySetMapping Name="PatientDetail">
+            <EntityTypeMapping TypeName="DOPModel.PatientDetail">
+              <MappingFragment StoreEntitySet="PatientDetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
+                <ScalarProperty Name="patient_mobile" ColumnName="patient_mobile" />
+                <ScalarProperty Name="patient_occupation" ColumnName="patient_occupation" />
+                <ScalarProperty Name="patient_address" ColumnName="patient_address" />
+                <ScalarProperty Name="patient_city" ColumnName="patient_city" />
+                <ScalarProperty Name="patient_district" ColumnName="patient_district" />
+                <ScalarProperty Name="patient_pincode" ColumnName="patient_pincode" />
+                <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patientvisit">
+            <EntityTypeMapping TypeName="DOPModel.Patientvisit">
+              <MappingFragment StoreEntitySet="Patientvisit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
+                <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
+                <ScalarProperty Name="patient_gender" ColumnName="patient_gender" />
+                <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
+                <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientRefraction">
+            <EntityTypeMapping TypeName="DOPModel.PatientRefraction">
+              <MappingFragment StoreEntitySet="PatientRefraction">
+                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+                <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
+                <ScalarProperty Name="AXIS_OS" ColumnName="AXIS_OS" />
+                <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
+                <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
+                <ScalarProperty Name="VISION_OD" ColumnName="VISION_OD" />
+                <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
+                <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
+                <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

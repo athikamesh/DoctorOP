@@ -24,5 +24,11 @@ namespace DoctorOP
         {
             InitializeComponent();
         }
+
+        private void Btn_consulting_Click(object sender, RoutedEventArgs e)
+        {
+            PatientConsulting PC = new PatientConsulting();
+            PC.ShowDialog();
+        }
     }
 }
