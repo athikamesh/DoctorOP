@@ -10,7 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="patient_id" Type="nvarchar(max)" />
+          <Property Name="patient_id" Type="varchar(max)" />
           <Property Name="patient_name" Type="varchar(max)" />
           <Property Name="patient_mobile" Type="varchar(max)" />
           <Property Name="patient_occupation" Type="varchar(max)" />
@@ -24,8 +24,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="patient_id" Type="varchar(max)" />
+          <Property Name="patient_visitid" Type="varchar(max)" />
           <Property Name="SPH_OD" Type="varchar(max)" />
           <Property Name="CYL_OD" Type="varchar(max)" />
           <Property Name="AXIS_OD" Type="varchar(max)" />
@@ -34,19 +35,19 @@
           <Property Name="CYL_OS" Type="varchar(max)" />
           <Property Name="AXIS_OS" Type="varchar(max)" />
           <Property Name="VISION_OS" Type="varchar(max)" />
-          <Property Name="RefDate" Type="varchar(max)" />
+          <Property Name="VISITDATE" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Patientvisit">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="patient_visitid" Type="nvarchar(max)" />
-          <Property Name="patient_id" Type="nvarchar(max)" />
+          <Property Name="patient_visitid" Type="varchar(max)" />
+          <Property Name="patient_id" Type="varchar(max)" />
           <Property Name="patient_name" Type="varchar(max)" />
-          <Property Name="patient_Complaint" Type="varchar(max)" />
           <Property Name="patient_gender" Type="varchar(max)" />
           <Property Name="patient_eye" Type="varchar(max)" />
+          <Property Name="patient_Complaint" Type="varchar(max)" />
           <Property Name="Visitdate" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="DOPModelStoreContainer">
@@ -62,8 +63,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -73,30 +74,13 @@
           <Property Name="patient_pincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Patientvisit">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityContainer Name="DOPEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
-          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
-          <EntitySet Name="PatientRefraction" EntityType="DOPModel.PatientRefraction" />
-        </EntityContainer>
         <EntityType Name="PatientRefraction">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="SPH_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CYL_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="AXIS_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -105,8 +89,26 @@
           <Property Name="CYL_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="AXIS_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="VISION_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RefDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VISITDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Patientvisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DOPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
+          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" />
+          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -129,6 +131,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PatientRefraction">
+            <EntityTypeMapping TypeName="DOPModel.PatientRefraction">
+              <MappingFragment StoreEntitySet="PatientRefraction">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />
+                <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
+                <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
+                <ScalarProperty Name="VISION_OD" ColumnName="VISION_OD" />
+                <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
+                <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
+                <ScalarProperty Name="AXIS_OS" ColumnName="AXIS_OS" />
+                <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
+                <ScalarProperty Name="VISITDATE" ColumnName="VISITDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patientvisit">
             <EntityTypeMapping TypeName="DOPModel.Patientvisit">
               <MappingFragment StoreEntitySet="Patientvisit">
@@ -136,27 +156,10 @@
                 <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
                 <ScalarProperty Name="patient_name" ColumnName="patient_name" />
-                <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
                 <ScalarProperty Name="patient_gender" ColumnName="patient_gender" />
                 <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
+                <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
                 <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PatientRefraction">
-            <EntityTypeMapping TypeName="DOPModel.PatientRefraction">
-              <MappingFragment StoreEntitySet="PatientRefraction">
-                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
-                <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
-                <ScalarProperty Name="AXIS_OS" ColumnName="AXIS_OS" />
-                <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
-                <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
-                <ScalarProperty Name="VISION_OD" ColumnName="VISION_OD" />
-                <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
-                <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
-                <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />
-                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -18,9 +18,9 @@ namespace DoctorOP
         public string patient_visitid { get; set; }
         public string patient_id { get; set; }
         public string patient_name { get; set; }
-        public string patient_Complaint { get; set; }
         public string patient_gender { get; set; }
         public string patient_eye { get; set; }
+        public string patient_Complaint { get; set; }
         public string Visitdate { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace DoctorOP
     {
         public int Id { get; set; }
         public string patient_id { get; set; }
+        public string patient_visitid { get; set; }
         public string SPH_OD { get; set; }
         public string CYL_OD { get; set; }
         public string AXIS_OD { get; set; }
@@ -24,6 +25,6 @@ namespace DoctorOP
         public string CYL_OS { get; set; }
         public string AXIS_OS { get; set; }
         public string VISION_OS { get; set; }
-        public string RefDate { get; set; }
+        public string VISITDATE { get; set; }
     }
 }

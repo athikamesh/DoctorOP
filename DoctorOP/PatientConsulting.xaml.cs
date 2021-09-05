@@ -20,10 +20,11 @@ namespace DoctorOP
     public partial class PatientConsulting : Window
     {
         DOPEntities dOPEntities = new DOPEntities();
-        string gender = "",eye="";
+        string gender = "",eye=""; int patientvisitid = 0;
         public PatientConsulting()
         {
             InitializeComponent();
+           // dOPEntities.Database.Connection.ConnectionString = "data source=(LocalDB)\\MSSQLLocalDB;attachdbfilename=C:\\data\\DOP.mdf;";
             txt_patientID.Text = GetPateintID().ToString();
         }
         int GetPateintID()
@@ -52,6 +53,7 @@ namespace DoctorOP
         {
             try
             {
+                patientvisitid = GetPateintVisitID();
                 PatientDetail patientDetail = new PatientDetail();
                 patientDetail.patient_id = txt_patientID.Text;
                 patientDetail.patient_name = txt_patientname.Text;
@@ -64,7 +66,7 @@ namespace DoctorOP
                 patientDetail.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
 
                 Patientvisit patientvisit = new Patientvisit();
-                patientvisit.patient_visitid = GetPateintVisitID().ToString();
+                patientvisit.patient_visitid = patientvisitid.ToString();
                 patientvisit.patient_id = txt_patientID.Text;
                 patientvisit.patient_name = txt_patientname.Text;
                 patientvisit.patient_gender = gender;
@@ -77,7 +79,7 @@ namespace DoctorOP
                 int i=dOPEntities.SaveChanges();
                 if (i > 0) { Tab1.IsSelected = true; }
             }
-            catch { }
+            catch(Exception ex) { }
         }
 
         private void Rbt_od_Checked(object sender, RoutedEventArgs e)
@@ -110,10 +112,22 @@ namespace DoctorOP
             try
             {
                 PatientRefraction patientRefraction = new PatientRefraction();
-                patientRefraction.patient_id=
+                patientRefraction.patient_id = patientvisitid.ToString();
+                patientRefraction.SPH_OD = txt_SPH_OD.Text;
+                patientRefraction.CYL_OD = txt_CYL_OD.Text;
+                patientRefraction.AXIS_OD = txt_AXIS_OD.Text;
+                patientRefraction.VISION_OD = txt_VISION_OD.Text;
 
+                patientRefraction.SPH_OS = txt_SPH_OS.Text;
+                patientRefraction.CYL_OS = txt_CYL_OS.Text;
+                patientRefraction.AXIS_OS = txt_AXIS_OS.Text;
+                patientRefraction.VISION_OS = txt_VISION_OS.Text;
+
+                dOPEntities.PatientRefraction.Add(patientRefraction);
+                int i = dOPEntities.SaveChanges();
+                if (i > 0) { Tab2.IsSelected = true; }
             }
-            catch () { }
+            catch (Exception EX) { }
         }
 
         private void Rbt_odos_Checked(object sender, RoutedEventArgs e)

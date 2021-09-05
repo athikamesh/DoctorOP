@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4661170948cc4d5d8ad4aab319902bdd" Name="Diagram1">
+      <Diagram DiagramId="e52bf686ff4849118cf833b484a7652b" Name="Diagram1">
         <EntityTypeShape EntityType="DOPModel.PatientDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOPModel.Patientvisit" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOPModel.PatientRefraction" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DOPModel.PatientRefraction" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOPModel.Patientvisit" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

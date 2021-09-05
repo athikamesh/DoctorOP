@@ -26,7 +26,7 @@ namespace DoctorOP
         }
     
         public virtual DbSet<PatientDetail> PatientDetail { get; set; }
-        public virtual DbSet<Patientvisit> Patientvisit { get; set; }
         public virtual DbSet<PatientRefraction> PatientRefraction { get; set; }
+        public virtual DbSet<Patientvisit> Patientvisit { get; set; }
     }
 }

@@ -87,20 +87,20 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DefaultClass\PatientClass.cs" />
-    <Compile Include="DOPEF.Context.cs">
+    <Compile Include="DOPDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPEF.Context.tt</DependentUpon>
+      <DependentUpon>DOPDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DOPEF.cs">
+    <Compile Include="DOPDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPEF.tt</DependentUpon>
+      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DOPEF.Designer.cs">
+    <Compile Include="DOPDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPEF.edmx</DependentUpon>
+      <DependentUpon>DOPDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -116,13 +116,13 @@
       <DependentUpon>PatientConsulting.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientDetail.cs">
-      <DependentUpon>DOPEF.tt</DependentUpon>
+      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientRefraction.cs">
-      <DependentUpon>DOPEF.tt</DependentUpon>
+      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Patientvisit.cs">
-      <DependentUpon>DOPEF.tt</DependentUpon>
+      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -141,13 +141,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DOPEF.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DOPEF.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="bin\Debug\DoctorOP.exe.config" />
-    <None Include="DOPEF.edmx.diagram">
-      <DependentUpon>DOPEF.edmx</DependentUpon>
+    <EntityDeploy Include="DOPDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DOPDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DOPDB.edmx.diagram">
+      <DependentUpon>DOPDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -165,23 +165,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="bin\Debug\DOP_log.ldf">
-      <DependentUpon>DOP.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DOP.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Debug\EntityFramework.dll" />
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="DOP.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DOPDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DOPDB.edmx</DependentUpon>
+      <LastGenOutput>DOPDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DOPDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DOPDB.edmx</DependentUpon>
+      <LastGenOutput>DOPDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="DOP_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DOP.mdf</DependentUpon>
+    </Content>
     <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
     <Resource Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="DOPEF.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DOPEF.Context.cs</LastGenOutput>
-      <DependentUpon>DOPEF.edmx</DependentUpon>
-    </Content>
-    <Content Include="DOPEF.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DOPEF.edmx</DependentUpon>
-      <LastGenOutput>DOPEF.cs</LastGenOutput>
-    </Content>
     <Resource Include="Scal0180F.png" />
     <Resource Include="scal0180.png" />
     <Resource Include="newscal0180.png" />
