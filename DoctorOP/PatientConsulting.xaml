@@ -237,7 +237,10 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab2" Header="Patient Summary"></TabItem>
+            <TabItem x:Name="Tab2" Header="Patient Summary">
+                
+                
+            </TabItem>
             <TabItem x:Name="Tab3" Header="Payment"></TabItem>
         </TabControl>
     </Grid>
