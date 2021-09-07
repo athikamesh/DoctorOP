@@ -36,8 +36,8 @@
                         <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
                         <Label Grid.Row="2" Grid.Column="0" Content="Patient Name" VerticalContentAlignment="Center" FontSize="18"></Label>
                         <Label Grid.Row="3" Grid.Column="0" Content="Mobile" VerticalContentAlignment="Center" FontSize="18"></Label>
-                            <Label Grid.Row="4" Grid.Column="0" Content="Occupation" VerticalContentAlignment="Center" FontSize="18"></Label>
-                            <Label Grid.Row="1" Grid.Column="2" Content="Address" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="4" Grid.Column="0" Content="Occupation" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="1" Grid.Column="2" Content="Address" VerticalContentAlignment="Center" FontSize="18"></Label>
                         <Label Grid.Row="2" Grid.Column="2" Content="City" VerticalContentAlignment="Center" FontSize="18"></Label>
                         <Label Grid.Row="3" Grid.Column="2" Content="District" VerticalContentAlignment="Center" FontSize="18"></Label>
                         <Label Grid.Row="4" Grid.Column="2" Content="Pincode" VerticalContentAlignment="Center" FontSize="18"></Label>
@@ -238,7 +238,52 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="Tab2" Header="Patient Summary">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>                               
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Patient Detail" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Patient Name" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="3" Grid.Column="0" Content="Gender" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="4" Grid.Column="0" Content="Eye" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <Label Grid.Row="5" Grid.Column="0" Content="Cheif Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <TextBox x:Name="txt_patientID_tab3" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_patientname_tab3" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_male_tab3" Checked="Rbt_male_Checked">Male</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_female_tab3" Checked="Rbt_female_Checked">Female</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_other_tab3" Checked="Rbt_other_Checked">Other</RadioButton>
+                            </StackPanel>
+                            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_od_tab3" Checked="Rbt_od_Checked">OD</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_os_tab3" Checked="Rbt_os_Checked">OS</RadioButton>
+                                <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center"  x:Name="rbt_odos_tab3" Checked="Rbt_odos_Checked">Both</RadioButton>
+                            </StackPanel>
+                            <TextBox x:Name="txt_complaint_tab3" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+
+                        </Grid>
+                    </Border>
+
+
+
+                </Grid>
                 
             </TabItem>
             <TabItem x:Name="Tab3" Header="Payment"></TabItem>
