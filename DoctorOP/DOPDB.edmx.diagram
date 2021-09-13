@@ -8,6 +8,9 @@
         <EntityTypeShape EntityType="DOPModel.PatientDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DOPModel.PatientRefraction" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DOPModel.Patientvisit" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOPModel.Medicin_tbl" Width="1.5" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="DOPModel.PatientSummary" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DOPModel.Payment_tbl" Width="1.5" PointX="10.125" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

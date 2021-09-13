@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Medicin_tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_Id" Type="varchar(max)" />
+          <Property Name="Med_Name" Type="varchar(max)" />
+          <Property Name="Med_type" Type="varchar(max)" />
+          <Property Name="Med_Qty" Type="varchar(max)" />
+          <Property Name="Med_Price" Type="varchar(max)" />
+          <Property Name="Creat_Date" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="PatientDetail">
           <Key>
             <PropertyRef Name="Id" />
@@ -37,6 +49,21 @@
           <Property Name="VISION_OS" Type="varchar(max)" />
           <Property Name="VISITDATE" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="PatientSummary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patient_visitid" Type="varchar(max)" />
+          <Property Name="patient_id" Type="varchar(max)" />
+          <Property Name="med_id" Type="varchar(max)" />
+          <Property Name="med_name" Type="varchar(max)" />
+          <Property Name="med_qty" Type="varchar(max)" />
+          <Property Name="med_price" Type="varchar(max)" />
+          <Property Name="med_Amount" Type="varchar(max)" />
+          <Property Name="med_Type" Type="varchar(max)" />
+          <Property Name="create_date" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="Patientvisit">
           <Key>
             <PropertyRef Name="Id" />
@@ -50,10 +77,28 @@
           <Property Name="patient_Complaint" Type="varchar(max)" />
           <Property Name="Visitdate" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Payment_tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="paymentid" Type="varchar(max)" />
+          <Property Name="patient_id" Type="varchar(max)" />
+          <Property Name="patient_visitid" Type="varchar(max)" />
+          <Property Name="patient_name" Type="varchar(max)" />
+          <Property Name="patient_med_amount" Type="varchar(max)" />
+          <Property Name="patient_conslt_amount" Type="varchar(max)" />
+          <Property Name="patient_total_amount" Type="varchar(max)" />
+          <Property Name="payment_mode" Type="varchar(max)" />
+          <Property Name="payment_date" Type="varchar(max)" />
+        </EntityType>
         <EntityContainer Name="DOPModelStoreContainer">
+          <EntitySet Name="Medicin_tbl" EntityType="Self.Medicin_tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientSummary" EntityType="Self.PatientSummary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -108,7 +153,52 @@
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
           <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" />
           <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
+          <EntitySet Name="Medicin_tbl" EntityType="DOPModel.Medicin_tbl" />
+          <EntitySet Name="PatientSummary" EntityType="DOPModel.PatientSummary" />
+          <EntitySet Name="Payment_tbl" EntityType="DOPModel.Payment_tbl" />
         </EntityContainer>
+        <EntityType Name="Medicin_tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Med_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Qty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Creat_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PatientSummary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_qty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_Amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="med_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Payment_tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="paymentid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_med_amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_conslt_amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_total_amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="payment_mode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="payment_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -160,6 +250,51 @@
                 <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
                 <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
                 <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicin_tbl">
+            <EntityTypeMapping TypeName="DOPModel.Medicin_tbl">
+              <MappingFragment StoreEntitySet="Medicin_tbl">
+                <ScalarProperty Name="Creat_Date" ColumnName="Creat_Date" />
+                <ScalarProperty Name="Med_Price" ColumnName="Med_Price" />
+                <ScalarProperty Name="Med_Qty" ColumnName="Med_Qty" />
+                <ScalarProperty Name="Med_type" ColumnName="Med_type" />
+                <ScalarProperty Name="Med_Name" ColumnName="Med_Name" />
+                <ScalarProperty Name="Med_Id" ColumnName="Med_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientSummary">
+            <EntityTypeMapping TypeName="DOPModel.PatientSummary">
+              <MappingFragment StoreEntitySet="PatientSummary">
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="med_Type" ColumnName="med_Type" />
+                <ScalarProperty Name="med_Amount" ColumnName="med_Amount" />
+                <ScalarProperty Name="med_price" ColumnName="med_price" />
+                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
+                <ScalarProperty Name="med_name" ColumnName="med_name" />
+                <ScalarProperty Name="med_id" ColumnName="med_id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_tbl">
+            <EntityTypeMapping TypeName="DOPModel.Payment_tbl">
+              <MappingFragment StoreEntitySet="Payment_tbl">
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
+                <ScalarProperty Name="patient_total_amount" ColumnName="patient_total_amount" />
+                <ScalarProperty Name="patient_conslt_amount" ColumnName="patient_conslt_amount" />
+                <ScalarProperty Name="patient_med_amount" ColumnName="patient_med_amount" />
+                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="paymentid" ColumnName="paymentid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -28,5 +28,8 @@ namespace DoctorOP
         public virtual DbSet<PatientDetail> PatientDetail { get; set; }
         public virtual DbSet<PatientRefraction> PatientRefraction { get; set; }
         public virtual DbSet<Patientvisit> Patientvisit { get; set; }
+        public virtual DbSet<Medicin_tbl> Medicin_tbl { get; set; }
+        public virtual DbSet<PatientSummary> PatientSummary { get; set; }
+        public virtual DbSet<Payment_tbl> Payment_tbl { get; set; }
     }
 }

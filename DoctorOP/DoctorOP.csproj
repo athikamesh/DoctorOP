@@ -55,6 +55,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="NumericUpDown, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NumericUpDown.3.0.2\lib\NumericUpDown.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AutoComplete\AutoCompleteTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +92,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutoComplete\AutoCompleteEntry.cs" />
+    <Compile Include="AutoComplete\AutoCompleteTextBox.xaml.cs">
+      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="DefaultClass\PatientClass.cs" />
     <Compile Include="DOPDB.Context.cs">
@@ -112,6 +123,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medicin_tbl.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="PatientConsulting.xaml.cs">
       <DependentUpon>PatientConsulting.xaml</DependentUpon>
     </Compile>
@@ -121,7 +135,13 @@
     <Compile Include="PatientRefraction.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="PatientSummary.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Patientvisit.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_tbl.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
