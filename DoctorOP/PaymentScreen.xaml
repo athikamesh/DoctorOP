@@ -1,0 +1,46 @@
+﻿<Window x:Class="DoctorOP.PaymentScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorOP"
+        mc:Ignorable="d" Width="400" Height="420"
+        Title="PaymentScreen" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}">
+    <Border Width="400" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="0" Background="White">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>               
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Payment Detail" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+            <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
+            <Label Grid.Row="2" Grid.Column="0" Content="Patient Name" VerticalContentAlignment="Center" FontSize="18"></Label>
+            <Label Grid.Row="3" Grid.Column="0" Content="Medicin Amount" VerticalContentAlignment="Center" FontSize="18"></Label>
+            <Label Grid.Row="4" Grid.Column="0" Content="Consulting Fee" VerticalContentAlignment="Center" FontSize="18"></Label>
+            <Label Grid.Row="5" Grid.Column="0" Content="Total" VerticalContentAlignment="Center" FontSize="18"></Label>
+            <Label Grid.Row="6" Grid.Column="0" Content="Mode" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+            <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_med_amt" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_con_amt" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_tot_amt" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_mode" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">               
+                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+
+</Window>

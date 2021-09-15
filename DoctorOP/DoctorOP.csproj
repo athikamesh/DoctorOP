@@ -117,12 +117,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MedicinList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientConsulting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientRef.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaymentScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicinList.xaml.cs">
+      <DependentUpon>MedicinList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Medicin_tbl.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
@@ -132,6 +147,9 @@
     <Compile Include="PatientDetail.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="PatientRef.xaml.cs">
+      <DependentUpon>PatientRef.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientRefraction.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
@@ -140,6 +158,18 @@
     </Compile>
     <Compile Include="Patientvisit.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Med_Detail.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Ref_Detail.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Visit_Detail.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentScreen.xaml.cs">
+      <DependentUpon>PaymentScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Payment_tbl.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>

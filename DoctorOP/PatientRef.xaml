@@ -1,0 +1,86 @@
+﻿<Window x:Class="DoctorOP.PatientRef"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorOP"
+        mc:Ignorable="d" Width="650" Height="550"
+        Title="PatientRef" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="{x:Null}">
+    <Border Grid.Row="1" BorderBrush="DodgerBlue" BorderThickness="2" CornerRadius="5" Margin="0" Grid.ColumnSpan="2" Background="White" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="210"></RowDefinition>
+                <RowDefinition Height="260"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Source="Scal0180F.png"  ></Image>
+            <Image Grid.Column="2" Source="Scal0180F.png" ></Image>
+            <Label Grid.Column="1" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"  ></Label>
+            <Label Grid.Column="2" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"  ></Label>
+            <Border x:Name="pnl_od" Grid.Row="1"  BorderBrush="DodgerBlue" BorderThickness="2"  Grid.Column="1">
+                <Grid Grid.Row="1" Grid.Column="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OD" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                    <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                </Grid>
+            </Border>
+            <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="2"  BorderBrush="DodgerBlue" BorderThickness="2" >
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OS" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                    <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                </Grid>
+            </Border>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btn_tab2_cancel" Content="Close" Width="200" FontSize="18"  Margin="5,5" Click="btn_tab2_cancel_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

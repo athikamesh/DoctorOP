@@ -12,18 +12,18 @@ namespace DoctorOP
     using System;
     using System.Collections.Generic;
     
-    public partial class Payment_tbl
+    public partial class Patient_Visit_Detail
     {
         public int Id { get; set; }
-        public string paymentid { get; set; }
         public string patient_id { get; set; }
-        public string patient_visitid { get; set; }
         public string patient_name { get; set; }
-        public string patient_med_amount { get; set; }
-        public string patient_conslt_amount { get; set; }
-        public string patient_total_amount { get; set; }
-        public string payment_mode { get; set; }
-        public string payment_date { get; set; }
+        public string patient_mobile { get; set; }
+        public string patient_city { get; set; }
+        public string patient_gender { get; set; }
+        public string patient_eye { get; set; }
+        public string patient_visitid { get; set; }
+        public string patient_Complaint { get; set; }
+        public string Visitdate { get; set; }
         public string nextvisit { get; set; }
     }
 }

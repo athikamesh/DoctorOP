@@ -24,13 +24,14 @@ namespace DoctorOP
         string gender = "",eye=""; int patientvisitid = 0;
         List<DefaultClass.MedicinList> MList = new List<DefaultClass.MedicinList>();
         List<DefaultClass.MedicinList> AMList = new List<DefaultClass.MedicinList>();
+        List<DefaultClass.PatientVisit_Class> PVList = new List<DefaultClass.PatientVisit_Class>();
         public PatientConsulting()
         {
             InitializeComponent();
            // dOPEntities.Database.Connection.ConnectionString = "data source=(LocalDB)\\MSSQLLocalDB;attachdbfilename=C:\\data\\DOP.mdf;";
             txt_patientID.Text = GetPateintID().ToString();           
             cmb_days.SelectedIndex = 0;
-            LoadMedicin();
+            LoadMedicin(); GetPatientVisit("");
         }
         int GetPateintID()
         {
@@ -187,7 +188,7 @@ namespace DoctorOP
 
         private void defbtn_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void txt_customername_KeyDown(object sender, KeyEventArgs e)
@@ -407,6 +408,103 @@ namespace DoctorOP
                     // RoutedEvent = Keyboard.PreviewKeyUpEvent
                 }
             }
+        }
+
+        private void txt_searchpatient_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.Key == Key.Enter)
+                {
+                    GetPatientVisit(txt_searchpatient.Text.Trim());
+                }
+            }
+            catch { }
+        }
+
+        private void btn_medicin_Click(object sender, RoutedEventArgs e)
+        {
+            object item = Searchgrid_visit.SelectedItem;
+            string ID = (Searchgrid_visit.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            if (ID != "")
+            {
+                MedicinList PRF = new MedicinList(ID);
+                PRF.ShowDialog();
+            }
+        }
+
+        private void btn_payment_Click(object sender, RoutedEventArgs e)
+        {
+            object item = Searchgrid_visit.SelectedItem;
+            string ID = (Searchgrid_visit.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            if (ID != "")
+            {
+                PaymentScreen PRF = new PaymentScreen(ID);
+                PRF.ShowDialog();
+            }
+        }
+
+        private void btn_patientref_Click(object sender, RoutedEventArgs e)
+        {
+            object item = Searchgrid_visit.SelectedItem;
+            string ID = (Searchgrid_visit.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            if(ID!="")
+            {
+                PatientRef PRF = new PatientRef(ID);
+                PRF.ShowDialog();
+            }
+        }
+
+        public void GetPatientVisit(string Mobileno)
+        {           
+            try
+            {
+                PVList.Clear();
+                Searchgrid_visit.ItemsSource = null;
+                if (Mobileno != "")
+                {
+                    var Detail = dOPEntities.Patient_Visit_Detail.Where(b=>b.patient_mobile==Mobileno).ToList();
+                    foreach (var Det in Detail)
+                    {
+                        DefaultClass.PatientVisit_Class PVC = new DefaultClass.PatientVisit_Class();
+                        PVC.Id = Det.Id;
+                        PVC.patient_visitid = Det.patient_visitid;
+                        PVC.patient_id = Det.patient_id;
+                        PVC.patient_name = Det.patient_name;
+                        PVC.patient_mobile = Det.patient_mobile;
+                        PVC.patient_city = Det.patient_city;
+                        PVC.patient_Complaint = Det.patient_Complaint;
+                        PVC.patient_gender = Det.patient_gender;
+                        PVC.patient_eye = Det.patient_eye;
+                        PVC.patient_nextvisit = Det.nextvisit;
+                        PVC.Visitdate = Det.Visitdate;
+                        PVList.Add(PVC);
+                    }
+                }
+                else
+                {
+                    var Detail = dOPEntities.Patient_Visit_Detail.ToList();
+                    foreach (var Det in Detail)
+                    {
+                        DefaultClass.PatientVisit_Class PVC = new DefaultClass.PatientVisit_Class();
+                        PVC.Id = Det.Id;
+                        PVC.patient_visitid = Det.patient_visitid;
+                        PVC.patient_id = Det.patient_id;
+                        PVC.patient_name = Det.patient_name;
+                        PVC.patient_mobile = Det.patient_mobile;
+                        PVC.patient_city = Det.patient_city;
+                        PVC.patient_Complaint = Det.patient_Complaint;
+                        PVC.patient_gender = Det.patient_gender;
+                        PVC.patient_eye = Det.patient_eye;
+                        PVC.patient_nextvisit = Det.nextvisit;
+                        PVC.Visitdate = Det.Visitdate;
+                        PVList.Add(PVC);
+                    }
+                }
+                Searchgrid_visit.ItemsSource = PVList;
+                Searchgrid.Items.Refresh();
+            }
+            catch (Exception ex) { }
         }
     }
 }

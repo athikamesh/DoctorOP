@@ -25,6 +25,8 @@ namespace DoctorOP.DefaultClass
         public String patient_visitid { get; set; }
         public String patient_id { get; set; }
         public String patient_name { get; set; }
+        public String patient_mobile { get; set; }
+        public String patient_city { get; set; }
         public String patient_Complaint { get; set; }
         public String patient_gender { get; set; }
         public String patient_eye { get; set; }

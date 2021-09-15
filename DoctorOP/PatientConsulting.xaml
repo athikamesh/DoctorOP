@@ -153,7 +153,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="50"></RowDefinition>
-                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150"></ColumnDefinition>
@@ -161,8 +161,124 @@
 
                             </Grid.ColumnDefinitions>
                             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Search Patient" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
-                            <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
-                            <TextBox x:Name="txt_searchpatient" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" Width="250" HorizontalAlignment="Left"></TextBox>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Patient Mobile" VerticalContentAlignment="Center" FontSize="18"></Label>
+                            <TextBox x:Name="txt_searchpatient" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" Width="250" HorizontalAlignment="Left" PreviewKeyDown="txt_searchpatient_PreviewKeyDown"></TextBox>
+                            <DataGrid x:Name="Searchgrid_visit" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AlternatingRowBackground="{DynamicResource AlternateColor}"  AutoGenerateColumns="False"  EnableRowVirtualization="True"  GridLinesVisibility="None" Background="White" IsReadOnly="True" FontSize="18" >
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource PrimaryFont}" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Height" Value="35"/>
+                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="FontWeight" Value="Normal"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.RowHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridRowHeader}">
+                                        <Setter Property="Width" Value="0"></Setter>
+                                        <Setter Property="FontWeight"  Value="Bold"></Setter>
+                                    </Style>
+                                </DataGrid.RowHeaderStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="p_visitid" Binding="{Binding patient_visitid}" Width="100" CanUserResize="False" >
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="VISIT ID"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_id" Binding="{Binding patient_id}"  Width="100" CanUserResize="False" >
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="PATIENT ID"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+
+                                    <DataGridTextColumn x:Name="p_name" Binding="{Binding patient_name}"  Width="200" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="NAME"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_mobile" Binding="{Binding patient_mobile}"  Width="150" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="MOBILE"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_city" Binding="{Binding patient_city}"  Width="100" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="CITY"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_complaint" Binding="{Binding patient_Complaint}"  Width="100" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="COMPLAINT"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_gender" Binding="{Binding patient_gender}"  Width="80" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="GENDER"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_eye" Binding="{Binding patient_eye}"  Width="50" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="EYE"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_nextvisit" Binding="{Binding patient_nextvisit}"  Width="100" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="Next Visit"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="p_lastvisit" Binding="{Binding Visitdate}"  Width="100" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="Last Visit"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTemplateColumn Width="100" >
+                                        <DataGridTemplateColumn.Header>
+                                            <TextBlock Text="Refraction"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+
+                                                <Button x:Name="btn_patientref" Width="26" Style="{DynamicResource ImageButtonStyle}" Click="btn_patientref_Click">
+                                                    <Path  Data="M17 16.88C17.56 16.88 18 17.32 18 17.88S17.56 18.88 17 18.88 16 18.43 16 17.88 16.44 16.88 17 16.88M17 13.88C19.73 13.88 22.06 15.54 23 17.88C22.06 20.22 19.73 21.88 17 21.88S11.94 20.22 11 17.88C11.94 15.54 14.27 13.88 17 13.88M17 15.38C15.62 15.38 14.5 16.5 14.5 17.88S15.62 20.38 17 20.38 19.5 19.26 19.5 17.88 18.38 15.38 17 15.38M18 3H4C2.9 3 2 3.9 2 5V17C2 18.1 2.9 19 4 19H9.42C9.26 18.68 9.12 18.34 9 18C9.12 17.66 9.26 17.32 9.42 17H4V13H10V15.97C10.55 15.11 11.23 14.37 12 13.76V13H13.15C14.31 12.36 15.62 12 17 12C18.06 12 19.07 12.21 20 12.59V5C20 3.9 19.1 3 18 3M10 11H4V7H10V11M18 11H12V7H18V11Z"
+                                      StrokeThickness="60"  Stretch="Uniform" Fill="#FF3D90E2" Width="20" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Height="20">
+                                                    </Path>
+                                                </Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Width="100" >
+                                        <DataGridTemplateColumn.Header>
+                                            <TextBlock Text="Payment"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+
+                                                <Button x:Name="btn_payment" Width="26" Style="{DynamicResource ImageButtonStyle}" Click="btn_payment_Click">
+                                                    <Path  Data="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z" 
+                                      StrokeThickness="60"  Stretch="Uniform" Fill="#FF3D90E2" Width="20" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Height="20">
+                                                    </Path>
+                                                </Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Width="100" >
+                                        <DataGridTemplateColumn.Header>
+                                            <TextBlock Text="Medicin"/>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+
+                                                <Button x:Name="btn_medicin" Width="26" Style="{DynamicResource ImageButtonStyle}" Click="btn_medicin_Click">
+                                                    <Path  Data="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"
+                                      StrokeThickness="60"  Stretch="Uniform" Fill="#FF3D90E2" Width="20" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Height="20">
+                                                    </Path>
+                                                </Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
                         </Grid>
                     </Border>
                 </Grid>
@@ -176,15 +292,16 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="8*"></ColumnDefinition>
-                        <ColumnDefinition Width="153*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="148*"/>
                         <ColumnDefinition Width="161*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.Column="0" Source="Scal0180F.png" Grid.ColumnSpan="2" ></Image>
-                    <Image Grid.Column="2" Source="Scal0180F.png" ></Image>
-                    <Label Grid.Column="1" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="255,112,287,72"></Label>
-                    <Label Grid.Column="2" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="294,112,294,72"></Label>
-                    <Border x:Name="pnl_od" Grid.Row="1" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="40,12,72,13" Grid.Column="1">
+                    <Image Grid.Column="0" Source="Scal0180F.png" Grid.ColumnSpan="3" ></Image>
+                    <Image Grid.Column="3" Source="Scal0180F.png" ></Image>
+                    <Label Grid.Column="2" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="235,112,287,72"></Label>
+                    <Label Grid.Column="3" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="294,112,294,72"></Label>
+                    <Border x:Name="pnl_od" Grid.Row="1" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="20,12,72,13" Grid.Column="2">
                         <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"></RowDefinition>
@@ -211,7 +328,7 @@
                             <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                         </Grid>
                     </Border>
-                    <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="2" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="72,12,72,13">
+                    <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="3" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="72,12,72,13">
                         <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"></RowDefinition>
@@ -238,7 +355,7 @@
                             <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                         </Grid>
                     </Border>
-                    <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
                         <Button x:Name="btn_tab2_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab2_next_Click"></Button>
                         <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0"></Button>
                     </StackPanel>
