@@ -6,11 +6,11 @@
         xmlns:auto="clr-namespace:DoctorOP.AutoComplete"
         xmlns:local="clr-namespace:DoctorOP"
     
-        mc:Ignorable="d" Width="1300" Height="768"
+        mc:Ignorable="d" Width="1024" Height="768"
         Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Grid>
-        <TabControl x:Name="Tab_Control">
-            <TabItem x:Name="Tab0" Header="Patient Info" >
+        <TabControl x:Name="Tab_Control" ItemContainerStyle="{StaticResource chevronTabItemStyle}">
+            <TabItem x:Name="Tab0" Header="Patient Info"  Background="DarkSlateBlue"  >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="267*"/>
@@ -283,7 +283,7 @@
                     </Border>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab1" Header="Refraction">
+            <TabItem x:Name="Tab1" Header="Refraction" Background="DarkCyan">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -361,7 +361,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab2" Header="Patient Summary">
+            <TabItem x:Name="Tab2" Header="Patient Summary" Background="LightSkyBlue" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -660,7 +660,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="Tab3" Header="Payment">
+            <TabItem x:Name="Tab3" Header="Payment" Background="SandyBrown">
                 <Border Width="500" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
                     <Grid >
                         <Grid.RowDefinitions>

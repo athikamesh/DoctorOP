@@ -55,5 +55,31 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="chevronTabItemStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,-7,0" Height="30">
+                            <Path Data="M0,0 10,0 10,30 0,30 10,15" Margin="0" Fill="{TemplateBinding Background}"/>
+                            <Grid >
+                                <Rectangle Fill="{TemplateBinding Background}" />
+                                <TextBlock Name="HeaderArrow" Text="{TemplateBinding Header}" Margin="15,5" VerticalAlignment="Center" Foreground="White" />
+                            </Grid>
+                            <Path Data="M0,0 10,15 0,30" Fill="{TemplateBinding Background}" />
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="HeaderArrow" Property="FontWeight" Value="Bold" />
+                                <Setter TargetName="HeaderArrow" Property="Foreground" Value="Yellow" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="HeaderArrow" Property="Foreground" Value="DarkGray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
