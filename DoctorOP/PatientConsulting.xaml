@@ -10,7 +10,32 @@
         Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Grid>
         <TabControl x:Name="Tab_Control">
-            <TabItem x:Name="Tab0" Header="Patient Info" >
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem x:Name="Tab0" Header="Patient Info" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="267*"/>
@@ -146,7 +171,7 @@
                     </Border>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
                         <Button x:Name="btn_tab1_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab1_next_Click"></Button>
-                        <Button x:Name="btn_tab1_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0"></Button>
+                        <Button x:Name="btn_tab1_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0" Click="btn_tab1_cancel_Click"></Button>
                     </StackPanel>
                     <Border Grid.Row="3" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
                         <Grid>
@@ -170,7 +195,7 @@
                                         <Setter Property="Foreground" Value="{StaticResource PrimaryFont}" />
                                         <Setter Property="HorizontalContentAlignment" Value="Left" />
                                         <Setter Property="Height" Value="35"/>
-                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="FontSize" Value="18"></Setter>
                                         <Setter Property="FontWeight" Value="Normal"/>
                                     </Style>
                                 </DataGrid.ColumnHeaderStyle>
@@ -191,7 +216,6 @@
                                             <TextBlock Text="PATIENT ID"/>
                                         </DataGridTextColumn.Header>
                                     </DataGridTextColumn>
-
                                     <DataGridTextColumn x:Name="p_name" Binding="{Binding patient_name}"  Width="200" CanUserResize="False">
                                         <DataGridTextColumn.Header>
                                             <TextBlock Text="NAME"/>
@@ -268,9 +292,8 @@
                                         </DataGridTemplateColumn.Header>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-
                                                 <Button x:Name="btn_medicin" Width="26" Style="{DynamicResource ImageButtonStyle}" Click="btn_medicin_Click">
-                                                    <Path  Data="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"
+                                                    <Path  Data="M4.22,11.29L11.29,4.22C13.64,1.88 17.43,1.88 19.78,4.22C22.12,6.56 22.12,10.36 19.78,12.71L12.71,19.78C10.36,22.12 6.56,22.12 4.22,19.78C1.88,17.43 1.88,13.64 4.22,11.29M5.64,12.71C4.59,13.75 4.24,15.24 4.6,16.57L10.59,10.59L14.83,14.83L18.36,11.29C19.93,9.73 19.93,7.2 18.36,5.64C16.8,4.07 14.27,4.07 12.71,5.64L5.64,12.71Z" 
                                       StrokeThickness="60"  Stretch="Uniform" Fill="#FF3D90E2" Width="20" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Height="20">
                                                     </Path>
                                                 </Button>
@@ -283,7 +306,7 @@
                     </Border>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab1" Header="Refraction">
+            <TabItem x:Name="Tab1" Header="Refraction" IsEnabled="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -357,11 +380,11 @@
                     </Border>
                     <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
                         <Button x:Name="btn_tab2_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab2_next_Click"></Button>
-                        <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0"></Button>
+                        <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0" Click="btn_tab2_cancel_Click"></Button>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab2" Header="Patient Summary">
+            <TabItem x:Name="Tab2" Header="Patient Summary" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -650,7 +673,7 @@
                             </Grid>
                             <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button x:Name="btn_tab3_next" Content="Next" Width="150" FontSize="18" Margin="5" Click="Btn_tab3_next_Click"></Button>
-                                <Button x:Name="btn_tab3_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5"></Button>
+                                <Button x:Name="btn_tab3_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5" Click="btn_tab3_cancel_Click"></Button>
                             </StackPanel>
 
                         </Grid>
@@ -660,7 +683,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="Tab3" Header="Payment">
+            <TabItem x:Name="Tab3" Header="Payment" IsEnabled="False">
                 <Border Width="500" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
                     <Grid >
                         <Grid.RowDefinitions>
@@ -763,7 +786,7 @@
                         <TextBox x:Name="txt_tot_amt_tab4" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
                         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                             <Button x:Name="btn_tab4_next" Content="Finish" Width="150" FontSize="18" Margin="5" Click="Btn_tab4_next_Click"></Button>
-                            <Button x:Name="btn_tab4_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5"></Button>
+                            <Button x:Name="btn_tab4_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5" Click="btn_tab4_cancel_Click"></Button>
                         </StackPanel>
                     </Grid>
                 </Border>
