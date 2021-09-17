@@ -61,7 +61,7 @@ namespace DoctorOP
                 pieSeries.Values = new ChartValues<ObservableValue> { new ObservableValue(dat.Count()) };
                 pieSeries.ToolTip = "New Idea1" + 20;
                 pieSeries.DataLabels = true;
-                anl_chart.Series.Add(pieSeries);
+                //anl_chart.Series.Add(pieSeries);
             }
 
             
