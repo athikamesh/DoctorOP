@@ -30,14 +30,14 @@
             <Label Grid.Row="5" Grid.Column="0" Content="Total" VerticalContentAlignment="Center" FontSize="18"></Label>
             <Label Grid.Row="6" Grid.Column="0" Content="Mode" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-            <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-            <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-            <TextBox x:Name="txt_med_amt" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-            <TextBox x:Name="txt_con_amt" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-            <TextBox x:Name="txt_tot_amt" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-            <TextBox x:Name="txt_mode" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+            <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+            <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+            <TextBox x:Name="txt_med_amt" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+            <TextBox x:Name="txt_con_amt" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+            <TextBox x:Name="txt_tot_amt" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+            <TextBox x:Name="txt_mode" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
             <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">               
-                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click"></Button>
+                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click" Style="{DynamicResource Round_Corner}"></Button>
             </StackPanel>
         </Grid>
     </Border>

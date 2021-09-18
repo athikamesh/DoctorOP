@@ -45,10 +45,10 @@
                     <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
                     <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-                    <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                 </Grid>
             </Border>
             <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="2"  BorderBrush="DodgerBlue" BorderThickness="2" >
@@ -72,14 +72,14 @@
                     <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
                     <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-                    <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                    <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                 </Grid>
             </Border>
             <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="btn_tab2_cancel" Content="Close" Width="200" FontSize="18"  Margin="5,5" Click="btn_tab2_cancel_Click"></Button>
+                <Button x:Name="btn_tab2_cancel" Content="Close" Width="200" FontSize="18"  Margin="5,5" Click="btn_tab2_cancel_Click" Style="{DynamicResource Round_Corner}"></Button>
             </StackPanel>
         </Grid>
     </Border>

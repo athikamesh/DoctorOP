@@ -52,12 +52,12 @@
                             <Label Grid.Row="3" Grid.Column="2" Content="District" VerticalContentAlignment="Center" FontSize="18"></Label>
                             <Label Grid.Row="4" Grid.Column="2" Content="Pincode" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-                            <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                            <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_mobile" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_occupation" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_address" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_city" Grid.Row="2" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_mobile" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_occupation" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_address" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_city" Grid.Row="2" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                             <ComboBox x:Name="cmb_district" Grid.Row="3" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2">
                                 <ComboBoxItem>Select</ComboBoxItem>
                                 <ComboBoxItem>Ariyalur</ComboBoxItem>
@@ -98,7 +98,7 @@
                                 <ComboBoxItem>Viluppuram</ComboBoxItem>
                                 <ComboBoxItem>Virudhunagar</ComboBoxItem>
                             </ComboBox>
-                            <TextBox x:Name="txt_pincode" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_pincode" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         </Grid>
 
                     </Border>
@@ -145,7 +145,7 @@
                                 <ComboBoxItem>Poor vision at night</ComboBoxItem>
                                 <ComboBoxItem>Double vision</ComboBoxItem>
                             </ComboBox>
-                            <TextBox x:Name="txt_ocopmlaint" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_ocopmlaint" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         </Grid>
                     </Border>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
@@ -324,10 +324,10 @@
                             <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
                             <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-                            <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
-                            <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         </Grid>
                     </Border>
                     <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="3" Width="460" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="72,12,72,13">
@@ -351,10 +351,10 @@
                             <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
                             <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
 
-                            <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
-                            <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         </Grid>
                     </Border>
                     <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -390,8 +390,8 @@
                             <Label Grid.Row="3" Grid.Column="0" Content="Gender" VerticalContentAlignment="Center" FontSize="18"></Label>
                             <Label Grid.Row="4" Grid.Column="0" Content="Eye" VerticalContentAlignment="Center" FontSize="18"></Label>
                             <Label Grid.Row="5" Grid.Column="0" Content="Cheif Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
-                            <TextBox x:Name="txt_patientID_tab3" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                            <TextBox x:Name="txt_patientname_tab3" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                            <TextBox x:Name="txt_patientID_tab3" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                            <TextBox x:Name="txt_patientname_tab3" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                             <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
                                 <RadioButton IsEnabled="False" Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_male_tab3" Checked="Rbt_male_Checked">Male</RadioButton>
                                 <RadioButton IsEnabled="False" Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_female_tab3" Checked="Rbt_female_Checked">Female</RadioButton>
@@ -402,7 +402,7 @@
                                 <RadioButton IsEnabled="False" Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_os_tab3" Checked="Rbt_os_Checked">OS</RadioButton>
                                 <RadioButton IsEnabled="False" Margin="5" FontSize="18" VerticalContentAlignment="Center"  x:Name="rbt_odos_tab3" Checked="Rbt_odos_Checked">Both</RadioButton>
                             </StackPanel>
-                            <TextBox x:Name="txt_complaint_tab3" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                            <TextBox x:Name="txt_complaint_tab3" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
 
                         </Grid>
                     </Border>
@@ -758,11 +758,11 @@
                                 </DataGridTemplateColumn>-->
                             </DataGrid.Columns>
                         </DataGrid>
-                        <TextBox x:Name="txt_patientID_tab4" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                        <TextBox x:Name="txt_patientname_tab4" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
-                        <TextBox x:Name="txt_med_amt_tab4" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                        <TextBox x:Name="txt_con_amt_tab4" Grid.Row="5" Grid.Column="1" Text="200" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                        <TextBox x:Name="txt_tot_amt_tab4" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
+                        <TextBox x:Name="txt_patientID_tab4" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_patientname_tab4" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_med_amt_tab4" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_con_amt_tab4" Grid.Row="5" Grid.Column="1" Text="200" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_tot_amt_tab4" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                             <Button x:Name="btn_tab4_next" Content="Finish" Width="150" FontSize="16" Margin="5" Click="Btn_tab4_next_Click" Style="{StaticResource Round_Corner}"></Button>
                             <Button x:Name="btn_tab4_cancel" Content="Cancel" Width="150" FontSize="16"  Margin="5" Click="btn_tab4_cancel_Click" Style="{StaticResource Round_Corner}"></Button>

@@ -67,7 +67,7 @@
           
             <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                
-                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click"></Button>
+                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click" Style="{DynamicResource Round_Corner}"></Button>
             </StackPanel>
 
         </Grid>
