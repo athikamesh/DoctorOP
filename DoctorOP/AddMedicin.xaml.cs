@@ -50,7 +50,14 @@ namespace DoctorOP
                     medicin_Tbl.Med_type = cmb_medtype.Text;
                     dOPEntities.Medicin_tbl.Add(medicin_Tbl);
                     int i=dOPEntities.SaveChanges();
-                    if (i > 0) { MessageBox.Show("Added Successfully"); } else { MessageBox.Show("Not Added Successfully"); }
+                    if (i > 0) { MessageBox.Show("Added Successfully"); 
+                        txt_medid.Text = "";
+                        txt_medname.Text = "";
+                        txt_medprice.Text = "";
+                        txt_medqty.Text = "";
+                        cmb_medtype.Text = "";
+                        txt_medid.Text = GetPateintID().ToString();
+                    } else { MessageBox.Show("Not Added Successfully"); }
                 }
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }

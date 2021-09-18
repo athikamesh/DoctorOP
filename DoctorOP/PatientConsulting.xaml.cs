@@ -295,8 +295,6 @@ namespace DoctorOP
                         PS.patient_visitid = patientvisitid.ToString();
                         PS.med_id = med.med_Id;
                         PS.med_name = med.med_name;
-
-
                         PS.med_qty = med.med_qty;
                         PS.med_Type = med.med_type;
                         PS.med_price = med.med_price;
@@ -323,24 +321,27 @@ namespace DoctorOP
         {
             try
             {
-                Payment_tbl payment_Tbl = new Payment_tbl();
-                payment_Tbl.patient_id = txt_patientID_tab4.Text;
-                payment_Tbl.patient_name = txt_patientname_tab4.Text;
-                payment_Tbl.patient_med_amount = txt_med_amt_tab4.Text;
-                payment_Tbl.patient_conslt_amount = txt_con_amt_tab4.Text;             
-                payment_Tbl.patient_visitid= patientvisitid.ToString();               
-                payment_Tbl.patient_total_amount = txt_tot_amt_tab4.Text;
-                payment_Tbl.payment_mode = "CASH";
-                payment_Tbl.payment_date= DateTime.Now.ToString("dd-MM-yyyy");
-                payment_Tbl.paymentid = GetPaymentID().ToString();
-                dOPEntities.Payment_tbl.Add(payment_Tbl);
-                int i = dOPEntities.SaveChanges();
-                if (i > 0) 
-                { 
-                    Tab0.IsSelected = true;
-                    Clear_Text();
+                if (cmb_days.Text != "" && cmb_time.Text != "")
+                {
+                    Payment_tbl payment_Tbl = new Payment_tbl();
+                    payment_Tbl.patient_id = txt_patientID_tab4.Text;
+                    payment_Tbl.patient_name = txt_patientname_tab4.Text;
+                    payment_Tbl.patient_med_amount = txt_med_amt_tab4.Text;
+                    payment_Tbl.patient_conslt_amount = txt_con_amt_tab4.Text;
+                    payment_Tbl.patient_visitid = patientvisitid.ToString();
+                    payment_Tbl.patient_total_amount = txt_tot_amt_tab4.Text;
+                    payment_Tbl.payment_mode = "CASH";
+                    payment_Tbl.payment_date = DateTime.Now.ToString("dd-MM-yyyy");
+                    payment_Tbl.paymentid = GetPaymentID().ToString();
+                    payment_Tbl.nextvisit = cmb_days.Text + " " + cmb_time.Text;
+                    dOPEntities.Payment_tbl.Add(payment_Tbl);
+                    int i = dOPEntities.SaveChanges();
+                    if (i > 0)
+                    {
+                        Tab0.IsSelected = true;
+                        Clear_Text(); GetPatientVisit("");
+                    }
                 }
-                
             }
             catch (Exception ex) { }
         }

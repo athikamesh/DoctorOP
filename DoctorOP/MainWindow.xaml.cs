@@ -40,8 +40,8 @@ namespace DoctorOP
         {
             PatientConsulting PC = new PatientConsulting();
             PC.ShowDialog();
-            LoadPayment_Chart(); VisitCount(); PaymentCount();
-          
+            LoadPayment_Chart(); VisitCount(); PaymentCount(); LoadComplaint_Chart();
+
         }
 
         private void Btn_medicin_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace DoctorOP
         {
             try
             {
-                              
+                SeriesCollection = null;
                 var detail = dOPEntities.SumProcedure().ToList();
                 SeriesCollection = new SeriesCollection();
                 Labels = new string[detail.Count];int i = 0;
@@ -80,7 +80,7 @@ namespace DoctorOP
             try
             {
                var detail = dOPEntities.Patientvisit.GroupBy(b => b.patient_Complaint).ToList();
-
+                PChart.Series.Clear();
                 foreach(var det in detail)
                 {
                     PieSeries pieSeries = new PieSeries();

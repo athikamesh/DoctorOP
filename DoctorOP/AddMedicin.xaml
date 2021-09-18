@@ -27,7 +27,7 @@
         <Label Grid.Row="4" Grid.Column="0" Content="Medicin Qty" VerticalContentAlignment="Center" FontSize="18"></Label>
 
         <TextBox x:Name="txt_medid" Grid.Row="0" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2" ></TextBox>
-        <TextBox x:Name="txt_medname" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+        <TextBox x:Name="txt_medname" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
         <TextBox x:Name="txt_medprice" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
         <ComboBox x:Name="cmb_medtype" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2">
             <ComboBoxItem>Drops</ComboBoxItem>
@@ -37,7 +37,7 @@
             <ComboBoxItem>Injection</ComboBoxItem>
             <ComboBoxItem>Others</ComboBoxItem>            
         </ComboBox>
-        <TextBox x:Name="txt_medqty" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+        <TextBox x:Name="txt_medqty" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"  BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <Button x:Name="btn_save" Content="Save" Width="150" FontSize="16" Margin="5" Click="btn_save_Click" Style="{StaticResource Round_Corner}"></Button>
             <Button x:Name="btn_cancel" Content="Cancel" Width="150" FontSize="16"  Margin="5" Click="btn_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
