@@ -92,31 +92,38 @@ namespace DoctorOP
         {
             try
             {
-                patientvisitid = GetPateintVisitID();
-                PatientDetail patientDetail = new PatientDetail();
-                patientDetail.patient_id = txt_patientID.Text;
-                patientDetail.patient_name = txt_patientname.Text;
-                patientDetail.patient_mobile = txt_mobile.Text;
-                patientDetail.patient_occupation = txt_occupation.Text;
-                patientDetail.patient_address = txt_address.Text;
-                patientDetail.patient_city = txt_city.Text;
-                patientDetail.patient_district = cmb_district.Text;
-                patientDetail.patient_pincode = txt_pincode.Text;
-                patientDetail.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
+                if (txt_patientname.Text != "" && txt_mobile.Text != "" && gender != "" && eye != "")
+                {
+                    patientvisitid = GetPateintVisitID();
+                    PatientDetail patientDetail = new PatientDetail();
+                    patientDetail.patient_id = txt_patientID.Text;
+                    patientDetail.patient_name = txt_patientname.Text;
+                    patientDetail.patient_mobile = txt_mobile.Text;
+                    patientDetail.patient_occupation = txt_occupation.Text;
+                    patientDetail.patient_address = txt_address.Text;
+                    patientDetail.patient_city = txt_city.Text;
+                    patientDetail.patient_district = cmb_district.Text;
+                    patientDetail.patient_pincode = txt_pincode.Text;
+                    patientDetail.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
 
-                Patientvisit patientvisit = new Patientvisit();
-                patientvisit.patient_visitid = patientvisitid.ToString();
-                patientvisit.patient_id = txt_patientID.Text;
-                patientvisit.patient_name = txt_patientname.Text;
-                patientvisit.patient_gender = gender;
-                patientvisit.patient_eye = eye;
-                patientvisit.patient_Complaint = cmb_ccomplaint.Text + txt_occupation.Text;
-                patientvisit.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
+                    Patientvisit patientvisit = new Patientvisit();
+                    patientvisit.patient_visitid = patientvisitid.ToString();
+                    patientvisit.patient_id = txt_patientID.Text;
+                    patientvisit.patient_name = txt_patientname.Text;
+                    patientvisit.patient_gender = gender;
+                    patientvisit.patient_eye = eye;
+                    patientvisit.patient_Complaint = cmb_ccomplaint.Text + txt_ocopmlaint.Text;
+                    patientvisit.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
 
-                dOPEntities.PatientDetail.Add(patientDetail);
-                dOPEntities.Patientvisit.Add(patientvisit);
-                int i=dOPEntities.SaveChanges();
-                if (i > 0) { Tab1.IsSelected = true; }
+                    dOPEntities.PatientDetail.Add(patientDetail);
+                    dOPEntities.Patientvisit.Add(patientvisit);
+                    int i = dOPEntities.SaveChanges();
+                    if (i > 0) { Tab1.IsSelected = true; }
+                }
+                else
+                {
+                    MessageBox.Show("Enter all the details..!", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
             catch(Exception ex) { }
         }
@@ -453,6 +460,74 @@ namespace DoctorOP
                 PatientRef PRF = new PatientRef(ID);
                 PRF.ShowDialog();
             }
+        }
+
+        private void btn_tab1_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            //Tab0
+            txt_patientID.Clear();
+            txt_patientname.Clear();
+            txt_mobile.Clear();
+            txt_occupation.Clear();
+            txt_address.Clear();
+            txt_city.Clear();
+            cmb_district.Text = "";
+            txt_pincode.Clear();
+            rbt_female.IsChecked = false;
+            rbt_male.IsChecked = false;
+            rbt_other.IsChecked = false;
+            rbt_od.IsChecked = false;
+            rbt_os.IsChecked = false;
+            rbt_odos.IsChecked = false;
+            cmb_ccomplaint.Text = "";
+            txt_ocopmlaint.Clear();
+            txt_searchpatient.Clear();
+            txt_patientID.Text = GetPateintID().ToString();
+            cmb_days.SelectedIndex = 0;
+        }
+
+        private void btn_tab2_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            //Tab1
+            txt_SPH_OD.Clear();
+            txt_CYL_OD.Clear();
+            txt_AXIS_OD.Clear();
+            txt_VISION_OD.Clear();
+            txt_SPH_OS.Clear();
+            txt_CYL_OS.Clear();
+            txt_AXIS_OS.Clear();
+            txt_VISION_OS.Clear();
+        }
+
+        private void btn_tab3_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            //Tab2
+            txt_patientID_tab3.Clear();
+            txt_patientname_tab3.Clear();
+            rbt_female_tab3.IsChecked = false;
+            rbt_male_tab3.IsChecked = false;
+            rbt_other_tab3.IsChecked = false;
+            rbt_od_tab3.IsChecked = false;
+            rbt_os_tab3.IsChecked = false;
+            rbt_odos_tab3.IsChecked = false;
+            txt_complaint_tab3.Clear();
+            cmb_days.SelectedIndex = 0;
+            cmb_time.SelectedIndex = 0;
+            txt_qty.Clear();
+            txt_medicin_name.Text = "";
+            Searchgrid.ItemsSource = null;
+            AMList.Clear();
+        }
+
+        private void btn_tab4_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            //Tab3
+            txt_patientID_tab4.Clear();
+            txt_patientname_tab4.Clear();
+            txt_med_amt_tab4.Clear();
+            txt_con_amt_tab4.Clear();
+            txt_tot_amt_tab4.Clear();
+            Searchgrid1.ItemsSource = null;
         }
 
         public void GetPatientVisit(string Mobileno)
