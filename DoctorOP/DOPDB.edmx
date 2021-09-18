@@ -141,6 +141,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="Visitdate" Type="varchar(max)" />
           <Property Name="nextvisit" Type="varchar(max)" />
         </EntityType>
+        <Function Name="SumProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DOPModelStoreContainer">
           <EntitySet Name="Medicin_tbl" EntityType="Self.Medicin_tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
@@ -247,6 +248,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <EntitySet Name="Patient_Visit_Detail" EntityType="DOPModel.Patient_Visit_Detail" />
           <EntitySet Name="Patient_Med_Detail" EntityType="DOPModel.Patient_Med_Detail" />
           <EntitySet Name="Patient_Ref_Detail" EntityType="DOPModel.Patient_Ref_Detail" />
+          <FunctionImport Name="SumProcedure" ReturnType="Collection(DOPModel.SumProcedure_Result)" />
         </EntityContainer>
         <EntityType Name="Medicin_tbl">
           <Key>
@@ -333,6 +335,10 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="VISION_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="SumProcedure_Result">
+          <Property Type="String" Name="payment_date" Nullable="true" />
+          <Property Type="Decimal" Name="Sumtotal" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -478,6 +484,14 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SumProcedure" FunctionName="DOPModel.Store.SumProcedure">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOPModel.SumProcedure_Result">
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="Sumtotal" ColumnName="Sumtotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

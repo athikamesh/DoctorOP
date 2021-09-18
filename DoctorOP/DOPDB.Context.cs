@@ -12,6 +12,8 @@ namespace DoctorOP
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DOPEntities : DbContext
     {
@@ -34,5 +36,10 @@ namespace DoctorOP
         public virtual DbSet<Patient_Visit_Detail> Patient_Visit_Detail { get; set; }
         public virtual DbSet<Patient_Med_Detail> Patient_Med_Detail { get; set; }
         public virtual DbSet<Patient_Ref_Detail> Patient_Ref_Detail { get; set; }
+    
+        public virtual ObjectResult<SumProcedure_Result> SumProcedure()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SumProcedure_Result>("SumProcedure");
+        }
     }
 }
