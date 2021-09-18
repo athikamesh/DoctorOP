@@ -46,7 +46,8 @@ namespace DoctorOP
 
         private void Btn_medicin_Click(object sender, RoutedEventArgs e)
         {
-            
+            AddMedicin AM = new AddMedicin();
+            AM.ShowDialog();
         }
 
         void LoadPayment_Chart()

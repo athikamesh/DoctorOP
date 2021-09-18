@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoctorOP"
         mc:Ignorable="d"
-        Title="AddMedicin" Height="330" Width="500">
+        Title="AddMedicin" Height="350" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -39,7 +39,7 @@
         </ComboBox>
         <TextBox x:Name="txt_medqty" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <Button x:Name="btn_save" Content="Finish" Width="150" FontSize="18" Margin="5" Click="btn_save_Click"></Button>
+            <Button x:Name="btn_save" Content="Save" Width="150" FontSize="18" Margin="5" Click="btn_save_Click"></Button>
             <Button x:Name="btn_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click"></Button>
         </StackPanel>
     </Grid>
