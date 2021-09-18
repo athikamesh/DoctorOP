@@ -108,20 +108,28 @@ namespace DoctorOP
         }
         void VisitCount()
         {
-            string tdate = DateTime.Now.ToString("dd-MM-yyyy");
-            var totvisit = dOPEntities.Patientvisit.Count();
-            var todayvisit = dOPEntities.Patientvisit.Where(b => b.Visitdate.Contains(tdate)).Count();
-            lbl_today_visit.Content = todayvisit;
-            lbl_total_visit.Content = totvisit;
+            try
+            {
+                string tdate = DateTime.Now.ToString("dd-MM-yyyy");
+                var totvisit = dOPEntities.Patientvisit.Count();
+                var todayvisit = dOPEntities.Patientvisit.Where(b => b.Visitdate.Contains(tdate)).Count();
+                lbl_today_visit.Content = todayvisit;
+                lbl_total_visit.Content = totvisit;
+            }
+            catch { }
         }
         void PaymentCount()
         {
-            string tdate = DateTime.Now.ToString("dd-MM-yyyy");
-            var totamount = dOPEntities.SumProcedure().Sum(b=>b.Sumtotal);
-            var todayamount = dOPEntities.SumProcedure().Where(b => b.payment_date == tdate).SingleOrDefault();
-            lbl_total_pay.Content = totamount;
-            if (todayamount == null) { lbl_today_pay.Content = "0"; }
-            else { lbl_today_pay.Content = todayamount.Sumtotal; }
+            try
+            {
+                string tdate = DateTime.Now.ToString("dd-MM-yyyy");
+                var totamount = dOPEntities.SumProcedure().Sum(b => b.Sumtotal);
+                var todayamount = dOPEntities.SumProcedure().Where(b => b.payment_date == tdate).SingleOrDefault();
+                lbl_total_pay.Content = totamount;
+                if (todayamount == null) { lbl_today_pay.Content = "0"; }
+                else { lbl_today_pay.Content = todayamount.Sumtotal; }
+            }
+            catch { }
         }
 
         private void Btn_close_Click(object sender, RoutedEventArgs e)

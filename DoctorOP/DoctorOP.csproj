@@ -93,6 +93,12 @@
     <Compile Include="AddMedicin.xaml.cs">
       <DependentUpon>AddMedicin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\LastVisitControl.xaml.cs">
+      <DependentUpon>LastVisitControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetPre_VisitDetail1_Result.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="SumProcedure_Result.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
@@ -103,6 +109,10 @@
     <Page Include="AutoComplete\AutoCompleteTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LastVisitControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

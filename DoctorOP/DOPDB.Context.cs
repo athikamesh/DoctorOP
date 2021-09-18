@@ -41,5 +41,14 @@ namespace DoctorOP
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SumProcedure_Result>("SumProcedure");
         }
+    
+        public virtual ObjectResult<GetPre_VisitDetail1_Result> GetPre_VisitDetail1(string param1)
+        {
+            var param1Parameter = param1 != null ?
+                new ObjectParameter("param1", param1) :
+                new ObjectParameter("param1", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPre_VisitDetail1_Result>("GetPre_VisitDetail1", param1Parameter);
+        }
     }
 }
