@@ -20,18 +20,32 @@ namespace DoctorOP.Control
     /// </summary>
     public partial class LastVisitControl : UserControl
     {
-        DOPEntities dOPEntities = new DOPEntities();
+       
 
-        public string _patientid;
-        public string PatientId
+        public string _patientcomplaint;
+        public string Patientcomplaint
         {
-            get { return _patientid; }
-            set { _patientid = value; }
+            get { return _patientcomplaint; }
+            set { _patientcomplaint = value; lbl_complaint.Content = value; }
         }
+        public string _visitdate;
+        public string VisitDate
+        {
+            get { return _visitdate; }
+            set { _visitdate = value;lbl_visitdate.Content = value; }
+        }
+        public string _eye;
+        public string Eye
+        {
+            get { return _eye; }
+            set { _eye = value; lbl_eye.Content = value; }
+        }
+
+
         public LastVisitControl()
         {
             InitializeComponent();
-            var det = dOPEntities.GetPre_VisitDetail1(PatientId).ToList();
+          
 
         }
     }

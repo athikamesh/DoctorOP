@@ -32,6 +32,7 @@ namespace DoctorOP
             txt_patientID.Text = GetPateintID().ToString();           
             cmb_days.SelectedIndex = 0;
             LoadMedicin(); GetPatientVisit("");
+            Load_LVC("1008");
         }
         int GetPateintID()
         {
@@ -188,11 +189,12 @@ namespace DoctorOP
                     rbt_os_tab3.IsChecked = rbt_os.IsChecked;
                     rbt_odos_tab3.IsChecked = rbt_odos.IsChecked;
                     txt_complaint_tab3.Text = cmb_ccomplaint.Text + txt_ocopmlaint.Text;
+                    
                 }
             }
             catch (Exception EX) { }
         }
-
+        
         private void defbtn_Click(object sender, RoutedEventArgs e)
         {
            
@@ -584,6 +586,21 @@ namespace DoctorOP
                 Searchgrid.Items.Refresh();
             }
             catch (Exception ex) { }
+        }
+
+        void Load_LVC(string PatientId)
+        {
+            try
+            {
+                var det = dOPEntities.GetPre_VisitDetail1(PatientId).ToList();
+                foreach (var d in det)
+                {
+                    Control.LastVisitControl lastVisitControl = new Control.LastVisitControl();
+                    lastVisitControl.Patientcomplaint = d.patient_Complaint;
+                    lastVisitControl.VisitDate = d.Visitdate;
+                }
+            }
+            catch(Exception ex) { }
         }
     }
 }
