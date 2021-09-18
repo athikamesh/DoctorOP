@@ -38,9 +38,16 @@
                 </Canvas>
             </Viewbox>
             <Label Grid.Column="1" Content="DOCTOR OP" FontSize="30" FontWeight="SemiBold" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" Foreground="#FFF9F9FB" VerticalContentAlignment="Center"/>
+            <Button x:Name="btn_close" Grid.Column="2"  Style="{StaticResource MetroWindowButtonStyle}" Click="Btn_close_Click">
+                <Viewbox Width="40" Height="40">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="White" Data="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                    </Canvas>
+                </Viewbox>
+            </Button>
         </Grid>
 
-        <Button x:Name="btn_opentry" Grid.Row="1" Grid.Column="0" Margin="5" Click="Btn_consulting_Click">
+        <Button x:Name="btn_opentry" Grid.Row="1" Grid.Column="0" Margin="5" Click="Btn_consulting_Click" Style="{StaticResource RoundCorner}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -48,13 +55,13 @@
                 </Grid.RowDefinitions>
                 <Viewbox Width="48" Height="48">
                     <Canvas Width="24" Height="24">
-                        <Path Fill="DodgerBlue" Data="M14.84,16.26C17.86,16.83 20,18.29 20,20V22H4V20C4,18.29 6.14,16.83 9.16,16.26L12,21L14.84,16.26M8,8H16V10A4,4 0 0,1 12,14A4,4 0 0,1 8,10V8M8,7L8.41,2.9C8.46,2.39 8.89,2 9.41,2H14.6C15.11,2 15.54,2.39 15.59,2.9L16,7H8M12,3H11V4H10V5H11V6H12V5H13V4H12V3Z" />
+                        <Path Fill="White" Data="M14.84,16.26C17.86,16.83 20,18.29 20,20V22H4V20C4,18.29 6.14,16.83 9.16,16.26L12,21L14.84,16.26M8,8H16V10A4,4 0 0,1 12,14A4,4 0 0,1 8,10V8M8,7L8.41,2.9C8.46,2.39 8.89,2 9.41,2H14.6C15.11,2 15.54,2.39 15.59,2.9L16,7H8M12,3H11V4H10V5H11V6H12V5H13V4H12V3Z" />
                     </Canvas>
                 </Viewbox>
                 <Label Grid.Row="1" Content="OP Entry" FontSize="20" FontWeight="SemiBold"></Label>
             </Grid>
         </Button>
-        <Button x:Name="btn_medicin" Grid.Row="1" Grid.Column="1" Margin="5" Click="Btn_medicin_Click">
+        <Button x:Name="btn_medicin" Grid.Row="1" Grid.Column="1" Margin="5" Click="Btn_medicin_Click" Style="{StaticResource RoundCorner}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -62,7 +69,7 @@
                 </Grid.RowDefinitions>
                 <Viewbox Width="48" Height="48">
                     <Canvas Width="24" Height="24">
-                        <Path Fill="DodgerBlue" Data="M4.22,11.29L11.29,4.22C13.64,1.88 17.43,1.88 19.78,4.22C22.12,6.56 22.12,10.36 19.78,12.71L12.71,19.78C10.36,22.12 6.56,22.12 4.22,19.78C1.88,17.43 1.88,13.64 4.22,11.29M5.64,12.71C4.59,13.75 4.24,15.24 4.6,16.57L10.59,10.59L14.83,14.83L18.36,11.29C19.93,9.73 19.93,7.2 18.36,5.64C16.8,4.07 14.27,4.07 12.71,5.64L5.64,12.71Z" />
+                        <Path Fill="White" Data="M4.22,11.29L11.29,4.22C13.64,1.88 17.43,1.88 19.78,4.22C22.12,6.56 22.12,10.36 19.78,12.71L12.71,19.78C10.36,22.12 6.56,22.12 4.22,19.78C1.88,17.43 1.88,13.64 4.22,11.29M5.64,12.71C4.59,13.75 4.24,15.24 4.6,16.57L10.59,10.59L14.83,14.83L18.36,11.29C19.93,9.73 19.93,7.2 18.36,5.64C16.8,4.07 14.27,4.07 12.71,5.64L5.64,12.71Z" />
                     </Canvas>
                 </Viewbox>
                 <Label Grid.Row="1" Content="Medicin" FontSize="20" FontWeight="SemiBold"></Label>

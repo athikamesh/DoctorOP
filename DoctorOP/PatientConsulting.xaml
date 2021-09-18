@@ -6,11 +6,15 @@
         xmlns:auto="clr-namespace:DoctorOP.AutoComplete"
         xmlns:local="clr-namespace:DoctorOP"
     
-        mc:Ignorable="d" Width="1024" Height="768"
-        Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        mc:Ignorable="d" Width="1250" Height="900"
+        Title="PatientConsulting" WindowState="Normal" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl x:Name="Tab_Control" >
-            <TabItem x:Name="Tab0" Header="Patient Info" Style="{DynamicResource chevronTabItemStyle }" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="765*"/>
+            <ColumnDefinition Width="479*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="Tab_Control" Grid.ColumnSpan="2" >
+            <TabItem x:Name="Tab0" Header="Patient Info" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="267*"/>
@@ -19,7 +23,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="270"></RowDefinition>
                         <RowDefinition Height="180"></RowDefinition>
-                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="55"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Border BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
@@ -145,8 +149,8 @@
                         </Grid>
                     </Border>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                        <Button x:Name="btn_tab1_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab1_next_Click"></Button>
-                        <Button x:Name="btn_tab1_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0" Click="btn_tab1_cancel_Click"></Button>
+                        <Button x:Name="btn_tab1_next" Content="Next" Width="200" FontSize="16" Margin="5,0" Click="Btn_tab1_next_Click" Style="{StaticResource Round_Corner}"></Button>
+                        <Button x:Name="btn_tab1_cancel" Content="Cancel" Width="200" FontSize="16"  Margin="5,0" Click="btn_tab1_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
                     </StackPanel>
                     <Border Grid.Row="3" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
                         <Grid>
@@ -281,12 +285,12 @@
                     </Border>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab1" Header="Refraction">
+            <TabItem x:Name="Tab1" Header="Refraction" IsEnabled="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="55"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="8*"></ColumnDefinition>
@@ -297,10 +301,10 @@
 
                     <Image Grid.Column="0" Source="Scal0180F.png" Grid.ColumnSpan="3" ></Image>
                     <Image Grid.Column="3" Source="Scal0180F.png" ></Image>
-                    <Label Grid.Column="2" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="235,112,287,72"></Label>
-                    <Label Grid.Column="3" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="100" Margin="294,112,294,72"></Label>
-                    <Border x:Name="pnl_od" Grid.Row="1" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="20,12,72,13" Grid.Column="2">
-                        <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
+                    <Label Grid.Column="2" Content="R" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="60" Margin="235,112,287,72"></Label>
+                    <Label Grid.Column="3" Content="L" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="60" Margin="294,112,294,72"></Label>
+                    <Border x:Name="pnl_od" Grid.Row="1" Width="460" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="20,12,72,13" Grid.Column="2">
+                        <Grid Grid.Row="1" Grid.Column="0" Width="460" Height="300">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="50"></RowDefinition>
@@ -323,11 +327,11 @@
                             <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
                             <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                             <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                         </Grid>
                     </Border>
-                    <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="3" Width="500" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="72,12,72,13">
-                        <Grid Grid.Row="1" Grid.Column="0" Width="500" Height="300">
+                    <Border x:Name="pnl_os" Grid.Row="1"  Grid.Column="3" Width="460" Height="300" BorderBrush="DodgerBlue" BorderThickness="2" Margin="72,12,72,13">
+                        <Grid Grid.Row="1" Grid.Column="0" Width="460" Height="300">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="50"></RowDefinition>
@@ -350,19 +354,19 @@
                             <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" ></TextBox>
                             <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                             <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
-                            <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
+                            <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                         </Grid>
                     </Border>
                     <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button x:Name="btn_tab2_next" Content="Next" Width="200" FontSize="18" Margin="5,0" Click="Btn_tab2_next_Click"></Button>
-                        <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="18"  Margin="5,0" Click="btn_tab2_cancel_Click"></Button>
+                        <Button x:Name="btn_tab2_next" Content="Next" Width="200" FontSize="16" Margin="5,0" Click="Btn_tab2_next_Click" Style="{StaticResource Round_Corner}"></Button>
+                        <Button x:Name="btn_tab2_cancel" Content="Cancel" Width="200" FontSize="16"  Margin="5,0" Click="btn_tab2_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab2" Header="Patient Summary">
+            <TabItem x:Name="Tab2" Header="Patient Summary" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="500"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Border BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
@@ -410,7 +414,7 @@
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="40"></RowDefinition>
-                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="55"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -647,8 +651,8 @@
                                 </ComboBox>
                             </Grid>
                             <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button x:Name="btn_tab3_next" Content="Next" Width="150" FontSize="18" Margin="5" Click="Btn_tab3_next_Click"></Button>
-                                <Button x:Name="btn_tab3_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5" Click="btn_tab3_cancel_Click"></Button>
+                                <Button x:Name="btn_tab3_next" Content="Next" Width="150" FontSize="16" Margin="5" Click="Btn_tab3_next_Click" Style="{StaticResource Round_Corner}"></Button>
+                                <Button x:Name="btn_tab3_cancel" Content="Cancel" Width="150" FontSize="16"  Margin="5" Click="btn_tab3_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
                             </StackPanel>
 
                         </Grid>
@@ -658,7 +662,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="Tab3" Header="Payment">
+            <TabItem x:Name="Tab3" Header="Payment" IsEnabled="False">
                 <Border Width="500" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
                     <Grid >
                         <Grid.RowDefinitions>
@@ -669,7 +673,7 @@
                             <RowDefinition Height="50"></RowDefinition>
                             <RowDefinition Height="50"></RowDefinition>
                             <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="55"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -760,8 +764,8 @@
                         <TextBox x:Name="txt_con_amt_tab4" Grid.Row="5" Grid.Column="1" Text="200" VerticalContentAlignment="Center" FontSize="18" Margin="2"></TextBox>
                         <TextBox x:Name="txt_tot_amt_tab4" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True"></TextBox>
                         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                            <Button x:Name="btn_tab4_next" Content="Finish" Width="150" FontSize="18" Margin="5" Click="Btn_tab4_next_Click"></Button>
-                            <Button x:Name="btn_tab4_cancel" Content="Cancel" Width="150" FontSize="18"  Margin="5" Click="btn_tab4_cancel_Click"></Button>
+                            <Button x:Name="btn_tab4_next" Content="Finish" Width="150" FontSize="16" Margin="5" Click="Btn_tab4_next_Click" Style="{StaticResource Round_Corner}"></Button>
+                            <Button x:Name="btn_tab4_cancel" Content="Cancel" Width="150" FontSize="16"  Margin="5" Click="btn_tab4_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
                         </StackPanel>
                     </Grid>
                 </Border>

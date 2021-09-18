@@ -285,32 +285,35 @@ namespace DoctorOP
         {
             try
             {
-                double amt = 0;
-                foreach (var med in AMList)
+                if (cmb_days.Text != "" && cmb_time.Text != "")
                 {
-                    PatientSummary PS = new PatientSummary();
-                    PS.patient_id = txt_patientID_tab3.Text;
-                    PS.patient_visitid = patientvisitid.ToString();
-                    PS.med_id = med.med_Id;
-                    PS.med_name = med.med_name;
+                    double amt = 0;
+                    foreach (var med in AMList)
+                    {
+                        PatientSummary PS = new PatientSummary();
+                        PS.patient_id = txt_patientID_tab3.Text;
+                        PS.patient_visitid = patientvisitid.ToString();
+                        PS.med_id = med.med_Id;
+                        PS.med_name = med.med_name;
 
 
-                    PS.med_qty = med.med_qty;
-                    PS.med_Type = med.med_type;
-                    PS.med_price = med.med_price;
-                    amt += double.Parse(med.med_price);
-                    PS.med_Amount = amt.ToString();
-                    PS.create_date = DateTime.Now.ToString("dd-MM-yyyy");
-                    dOPEntities.PatientSummary.Add(PS);                    
-                }
-                int i=dOPEntities.SaveChanges();
-                if (i > 0) 
-                { 
-                    Tab3.IsSelected = true; Searchgrid1.ItemsSource = AMList;
-                    txt_patientID_tab4.Text = txt_patientID.Text; 
-                    txt_patientname_tab4.Text = txt_patientname.Text;
-                    txt_med_amt_tab4.Text = amt.ToString();
-                    txt_tot_amt_tab4.Text = (amt + double.Parse(txt_con_amt_tab4.Text)).ToString();
+                        PS.med_qty = med.med_qty;
+                        PS.med_Type = med.med_type;
+                        PS.med_price = med.med_price;
+                        amt += double.Parse(med.med_price);
+                        PS.med_Amount = amt.ToString();
+                        PS.create_date = DateTime.Now.ToString("dd-MM-yyyy");
+                        dOPEntities.PatientSummary.Add(PS);
+                    }
+                    int i = dOPEntities.SaveChanges();
+                    if (i > 0)
+                    {
+                        Tab3.IsSelected = true; Searchgrid1.ItemsSource = AMList;
+                        txt_patientID_tab4.Text = txt_patientID.Text;
+                        txt_patientname_tab4.Text = txt_patientname.Text;
+                        txt_med_amt_tab4.Text = amt.ToString();
+                        txt_tot_amt_tab4.Text = (amt + double.Parse(txt_con_amt_tab4.Text)).ToString();
+                    }
                 }
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }

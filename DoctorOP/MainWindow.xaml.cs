@@ -123,5 +123,10 @@ namespace DoctorOP
             if (todayamount == null) { lbl_today_pay.Content = "0"; }
             else { lbl_today_pay.Content = todayamount.Sumtotal; }
         }
+
+        private void Btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
