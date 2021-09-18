@@ -9,8 +9,8 @@
         mc:Ignorable="d" Width="1024" Height="768"
         Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Grid>
-        <TabControl x:Name="Tab_Control">
-            <TabItem x:Name="Tab0" Header="Patient Info" >
+        <TabControl x:Name="Tab_Control" >
+            <TabItem x:Name="Tab0" Header="Patient Info" Style="{DynamicResource chevronTabItemStyle }" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="267*"/>
