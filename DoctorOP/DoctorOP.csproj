@@ -87,9 +87,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMedicin.xaml.cs">
+      <DependentUpon>AddMedicin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SumProcedure_Result.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
+    <Page Include="AddMedicin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AutoComplete\AutoCompleteTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

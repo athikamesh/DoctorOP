@@ -30,7 +30,10 @@ namespace DoctorOP
         public MainWindow()
         {
             InitializeComponent();
-            LoadPayment_Chart(); VisitCount(); PaymentCount();
+            PointLabel = chartPoint =>
+           string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            LoadPayment_Chart(); VisitCount(); PaymentCount(); LoadComplaint_Chart();
+
         }
 
         private void Btn_consulting_Click(object sender, RoutedEventArgs e)
@@ -38,12 +41,12 @@ namespace DoctorOP
             PatientConsulting PC = new PatientConsulting();
             PC.ShowDialog();
             LoadPayment_Chart(); VisitCount(); PaymentCount();
-            CChart.
+          
         }
 
         private void Btn_medicin_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         void LoadPayment_Chart()
@@ -71,7 +74,37 @@ namespace DoctorOP
             }
             catch(Exception ex) { }
         }
+        void LoadComplaint_Chart()
+        {
+            try
+            {
+               var detail = dOPEntities.Patientvisit.GroupBy(b => b.patient_Complaint).ToList();
 
+                foreach(var det in detail)
+                {
+                    PieSeries pieSeries = new PieSeries();
+                    pieSeries.Title = det.Key.ToString();
+                    pieSeries.Values = new ChartValues<ObservableValue> { new ObservableValue(det.Count()) };
+                    pieSeries.DataLabels = true;
+                    pieSeries.LabelPoint = PointLabel;
+                    PChart.Series.Add(pieSeries);
+                }
+            
+            }
+            catch { }
+        }
+        public Func<ChartPoint, string> PointLabel { get; set; }
+        private void Chart_OnDataClick(object sender, ChartPoint chartpoint)
+        {
+            var chart = (LiveCharts.Wpf.PieChart)chartpoint.ChartView;
+
+            //clear selected slice.
+            foreach (PieSeries series in chart.Series)
+                series.PushOut = 0;
+
+            var selectedSeries = (PieSeries)chartpoint.SeriesView;
+            selectedSeries.PushOut = 8;
+        }
         void VisitCount()
         {
             string tdate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -85,9 +118,9 @@ namespace DoctorOP
             string tdate = DateTime.Now.ToString("dd-MM-yyyy");
             var totamount = dOPEntities.SumProcedure().Sum(b=>b.Sumtotal);
             var todayamount = dOPEntities.SumProcedure().Where(b => b.payment_date == tdate).SingleOrDefault();
-            lbl_today_pay.Content = totamount;
-            if (todayamount == null) { lbl_total_pay.Content = "0"; }
-            else { lbl_total_pay.Content = todayamount.Sumtotal; }
+            lbl_total_pay.Content = totamount;
+            if (todayamount == null) { lbl_today_pay.Content = "0"; }
+            else { lbl_today_pay.Content = todayamount.Sumtotal; }
         }
     }
 }
