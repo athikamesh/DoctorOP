@@ -99,6 +99,9 @@
     <Compile Include="GetPre_VisitDetail1_Result.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetPre_VisitDetail1_Result1.cs">
+      <DependentUpon>DOPDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="SumProcedure_Result.cs">
       <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>

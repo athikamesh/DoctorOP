@@ -252,8 +252,8 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <EntitySet Name="Patient_Med_Detail" EntityType="DOPModel.Patient_Med_Detail" />
           <EntitySet Name="Patient_Ref_Detail" EntityType="DOPModel.Patient_Ref_Detail" />
           <FunctionImport Name="SumProcedure" ReturnType="Collection(DOPModel.SumProcedure_Result)" />
-          <FunctionImport Name="GetPre_VisitDetail1" ReturnType="Collection(DOPModel.GetPre_VisitDetail1_Result)">
-          <Parameter Name="param1" Mode="In" Type="String" />
+          <FunctionImport Name="GetPre_VisitDetail1" ReturnType="Collection(DOPModel.GetPre_VisitDetail1_Result1)">
+            <Parameter Name="param1" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Medicin_tbl">
@@ -349,6 +349,21 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Type="String" Name="Visitdate" Nullable="true" />
           <Property Type="String" Name="patient_Complaint" Nullable="true" />
           <Property Type="String" Name="med_name" Nullable="true" />
+          <Property Type="String" Name="AXIS_OD" Nullable="true" />
+          <Property Type="String" Name="CYL_OD" Nullable="true" />
+          <Property Type="String" Name="SPH_OD" Nullable="true" />
+          <Property Type="String" Name="VISION_OD" Nullable="true" />
+          <Property Type="String" Name="AXIS_OS" Nullable="true" />
+          <Property Type="String" Name="CYL_OS" Nullable="true" />
+          <Property Type="String" Name="SPH_OS" Nullable="true" />
+          <Property Type="String" Name="VISION_OS" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetPre_VisitDetail1_Result1">
+          <Property Type="String" Name="patient_eye" Nullable="true" />
+          <Property Type="String" Name="Visitdate" Nullable="true" />
+          <Property Type="String" Name="patient_Complaint" Nullable="true" />
+          <Property Type="String" Name="med_name" Nullable="true" />
+          <Property Type="String" Name="med_qty" Nullable="true" />
           <Property Type="String" Name="AXIS_OD" Nullable="true" />
           <Property Type="String" Name="CYL_OD" Nullable="true" />
           <Property Type="String" Name="SPH_OD" Nullable="true" />
@@ -513,10 +528,12 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetPre_VisitDetail1" FunctionName="DOPModel.Store.GetPre_VisitDetail1">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DOPModel.GetPre_VisitDetail1_Result">
+              <ComplexTypeMapping TypeName="DOPModel.GetPre_VisitDetail1_Result1">
+                <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
                 <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
                 <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
                 <ScalarProperty Name="med_name" ColumnName="med_name" />
+                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
                 <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
                 <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
                 <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />

@@ -32,7 +32,7 @@ namespace DoctorOP
             txt_patientID.Text = GetPateintID().ToString();           
             cmb_days.SelectedIndex = 0;
             LoadMedicin(); GetPatientVisit("");
-            Load_LVC("1008");
+            
         }
         int GetPateintID()
         {
@@ -189,7 +189,7 @@ namespace DoctorOP
                     rbt_os_tab3.IsChecked = rbt_os.IsChecked;
                     rbt_odos_tab3.IsChecked = rbt_odos.IsChecked;
                     txt_complaint_tab3.Text = cmb_ccomplaint.Text + txt_ocopmlaint.Text;
-                    
+                    Load_LVC(txt_patientID.Text);
                 }
             }
             catch (Exception EX) { }
@@ -592,12 +592,32 @@ namespace DoctorOP
         {
             try
             {
+                string ldate = "";string Medlist = "";
                 var det = dOPEntities.GetPre_VisitDetail1(PatientId).ToList();
                 foreach (var d in det)
                 {
-                    Control.LastVisitControl lastVisitControl = new Control.LastVisitControl();
-                    lastVisitControl.Patientcomplaint = d.patient_Complaint;
-                    lastVisitControl.VisitDate = d.Visitdate;
+                    if (ldate != d.Visitdate)
+                    {
+                        Control.LastVisitControl lastVisitControl = new Control.LastVisitControl();
+                        lastVisitControl.Patientcomplaint = d.patient_Complaint;
+                        lastVisitControl.VisitDate = d.Visitdate.Remove(10);
+                        lastVisitControl.Eye = d.patient_eye;                       
+                        lastVisitControl.SPH_OD = d.SPH_OD;
+                        lastVisitControl.AXIS_OD = d.AXIS_OD;
+                        lastVisitControl.CYL_OD = d.CYL_OD;
+                        lastVisitControl.VISION_OD = d.VISION_OD;
+                        lastVisitControl.SPH_OS = d.SPH_OS;
+                        lastVisitControl.AXIS_OS = d.AXIS_OS;
+                        lastVisitControl.CYL_OS = d.CYL_OS;
+                        lastVisitControl.VISION_OS = d.VISION_OS;
+                        foreach(var st in det)
+                        {
+                            Medlist += st.med_name + " -" + st.med_qty+Environment.NewLine;
+                        }
+                        lastVisitControl.Meddetail = Medlist;
+                        LVCList.Children.Add(lastVisitControl);
+                        ldate = d.Visitdate;
+                    }
                 }
             }
             catch(Exception ex) { }
