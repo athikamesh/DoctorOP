@@ -27,28 +27,28 @@ namespace DoctorOP
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Medicin_tbl> Medicin_tbl { get; set; }
         public virtual DbSet<PatientDetail> PatientDetail { get; set; }
         public virtual DbSet<PatientRefraction> PatientRefraction { get; set; }
-        public virtual DbSet<Patientvisit> Patientvisit { get; set; }
-        public virtual DbSet<Medicin_tbl> Medicin_tbl { get; set; }
         public virtual DbSet<PatientSummary> PatientSummary { get; set; }
+        public virtual DbSet<Patientvisit> Patientvisit { get; set; }
         public virtual DbSet<Payment_tbl> Payment_tbl { get; set; }
-        public virtual DbSet<Patient_Visit_Detail> Patient_Visit_Detail { get; set; }
         public virtual DbSet<Patient_Med_Detail> Patient_Med_Detail { get; set; }
         public virtual DbSet<Patient_Ref_Detail> Patient_Ref_Detail { get; set; }
+        public virtual DbSet<Patient_Visit_Detail> Patient_Visit_Detail { get; set; }
     
-        public virtual ObjectResult<SumProcedure_Result> SumProcedure()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SumProcedure_Result>("SumProcedure");
-        }
-    
-        public virtual ObjectResult<GetPre_VisitDetail1_Result1> GetPre_VisitDetail1(string param1)
+        public virtual ObjectResult<GetPre_VisitDetail1_Result> GetPre_VisitDetail1(string param1)
         {
             var param1Parameter = param1 != null ?
                 new ObjectParameter("param1", param1) :
                 new ObjectParameter("param1", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPre_VisitDetail1_Result1>("GetPre_VisitDetail1", param1Parameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPre_VisitDetail1_Result>("GetPre_VisitDetail1", param1Parameter);
+        }
+    
+        public virtual ObjectResult<SumProcedure_Result> SumProcedure()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SumProcedure_Result>("SumProcedure");
         }
     }
 }

@@ -96,14 +96,43 @@
     <Compile Include="Control\LastVisitControl.xaml.cs">
       <DependentUpon>LastVisitControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GetPre_VisitDetail1_Result.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
+    <Compile Include="DOPDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DOPDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="GetPre_VisitDetail1_Result1.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
+    <Compile Include="GetPre_VisitDetail1_Result.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medicin_tbl.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetail.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientRefraction.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientSummary.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patientvisit.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Med_Detail.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Ref_Detail.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Visit_Detail.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_tbl.cs">
+      <DependentUpon>DOPDM.tt</DependentUpon>
     </Compile>
     <Compile Include="SumProcedure_Result.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
+      <DependentUpon>DOPDM.tt</DependentUpon>
     </Compile>
     <Page Include="AddMedicin.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -130,20 +159,15 @@
       <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="DefaultClass\PatientClass.cs" />
-    <Compile Include="DOPDB.Context.cs">
+    <Compile Include="DOPDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDB.Context.tt</DependentUpon>
+      <DependentUpon>DOPDM.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DOPDB.cs">
+    <Compile Include="DOPDM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DOPDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDB.edmx</DependentUpon>
+      <DependentUpon>DOPDM.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -170,41 +194,14 @@
     <Compile Include="MedicinList.xaml.cs">
       <DependentUpon>MedicinList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Medicin_tbl.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="PatientConsulting.xaml.cs">
       <DependentUpon>PatientConsulting.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PatientDetail.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientRef.xaml.cs">
       <DependentUpon>PatientRef.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PatientRefraction.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PatientSummary.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Patientvisit.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Patient_Med_Detail.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Patient_Ref_Detail.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Patient_Visit_Detail.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="PaymentScreen.xaml.cs">
       <DependentUpon>PaymentScreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Payment_tbl.cs">
-      <DependentUpon>DOPDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -224,12 +221,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\DoctorOP.exe.config" />
-    <EntityDeploy Include="DOPDB.edmx">
+    <EntityDeploy Include="DOPDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DOPDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>DOPDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DOPDB.edmx.diagram">
-      <DependentUpon>DOPDB.edmx</DependentUpon>
+    <None Include="DOPDM.edmx.diagram">
+      <DependentUpon>DOPDM.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -255,15 +252,15 @@
     <Content Include="DOP.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DOPDB.Context.tt">
+    <Content Include="DOPDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DOPDB.edmx</DependentUpon>
-      <LastGenOutput>DOPDB.Context.cs</LastGenOutput>
+      <DependentUpon>DOPDM.edmx</DependentUpon>
+      <LastGenOutput>DOPDM.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DOPDB.tt">
+    <Content Include="DOPDM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DOPDB.edmx</DependentUpon>
-      <LastGenOutput>DOPDB.cs</LastGenOutput>
+      <DependentUpon>DOPDM.edmx</DependentUpon>
+      <LastGenOutput>DOPDM.cs</LastGenOutput>
     </Content>
     <Content Include="DOP_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

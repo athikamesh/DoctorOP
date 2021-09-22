@@ -4,7 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DOCOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.Medicin_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Medicin_tbl">
           <Key>
             <PropertyRef Name="Id" />
@@ -17,6 +19,8 @@
           <Property Name="Med_Price" Type="varchar(max)" />
           <Property Name="Creat_Date" Type="varchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.PatientDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PatientDetail">
           <Key>
             <PropertyRef Name="Id" />
@@ -32,6 +36,8 @@
           <Property Name="patient_pincode" Type="varchar(max)" />
           <Property Name="Visitdate" Type="varchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.PatientRefraction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PatientRefraction">
           <Key>
             <PropertyRef Name="Id" />
@@ -49,6 +55,8 @@
           <Property Name="VISION_OS" Type="varchar(max)" />
           <Property Name="VISITDATE" Type="varchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.PatientSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PatientSummary">
           <Key>
             <PropertyRef Name="Id" />
@@ -64,6 +72,8 @@
           <Property Name="med_Type" Type="varchar(max)" />
           <Property Name="create_date" Type="varchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.Patientvisit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Patientvisit">
           <Key>
             <PropertyRef Name="Id" />
@@ -77,6 +87,8 @@
           <Property Name="patient_Complaint" Type="varchar(max)" />
           <Property Name="Visitdate" Type="varchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DOCOP.dbo.Payment_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Payment_tbl">
           <Key>
             <PropertyRef Name="Id" />
@@ -94,7 +106,7 @@
           <Property Name="nextvisit" Type="varchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Med_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DOCOP.dbo.Patient_Med_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Patient_Med_Detail">
           <Key>
             <PropertyRef Name="Id" />
@@ -107,7 +119,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Med_Detail' does not h
           <Property Name="med_Type" Type="varchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Ref_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DOCOP.dbo.Patient_Ref_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Patient_Ref_Detail">
           <Key>
             <PropertyRef Name="Id" />
@@ -124,7 +136,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Ref_Detail' does not h
           <Property Name="patient_visitid" Type="varchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DOCOP.dbo.Patient_Visit_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Patient_Visit_Detail">
           <Key>
             <PropertyRef Name="Id" />
@@ -145,13 +157,89 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Parameter Name="param1" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SumProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="DOPModelStoreContainer">
-          <EntitySet Name="Medicin_tbl" EntityType="Self.Medicin_tbl" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PatientSummary" EntityType="Self.PatientSummary" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="DOCOPModelStoreContainer">
+          <EntitySet Name="Medicin_tbl" EntityType="Self.Medicin_tbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Medicin_tbl].[Id] AS [Id], 
+    [Medicin_tbl].[Med_Id] AS [Med_Id], 
+    [Medicin_tbl].[Med_Name] AS [Med_Name], 
+    [Medicin_tbl].[Med_type] AS [Med_type], 
+    [Medicin_tbl].[Med_Qty] AS [Med_Qty], 
+    [Medicin_tbl].[Med_Price] AS [Med_Price], 
+    [Medicin_tbl].[Creat_Date] AS [Creat_Date]
+    FROM [dbo].[Medicin_tbl] AS [Medicin_tbl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PatientDetail].[Id] AS [Id], 
+    [PatientDetail].[patient_id] AS [patient_id], 
+    [PatientDetail].[patient_name] AS [patient_name], 
+    [PatientDetail].[patient_mobile] AS [patient_mobile], 
+    [PatientDetail].[patient_occupation] AS [patient_occupation], 
+    [PatientDetail].[patient_address] AS [patient_address], 
+    [PatientDetail].[patient_city] AS [patient_city], 
+    [PatientDetail].[patient_district] AS [patient_district], 
+    [PatientDetail].[patient_pincode] AS [patient_pincode], 
+    [PatientDetail].[Visitdate] AS [Visitdate]
+    FROM [dbo].[PatientDetail] AS [PatientDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PatientRefraction].[Id] AS [Id], 
+    [PatientRefraction].[patient_id] AS [patient_id], 
+    [PatientRefraction].[patient_visitid] AS [patient_visitid], 
+    [PatientRefraction].[SPH_OD] AS [SPH_OD], 
+    [PatientRefraction].[CYL_OD] AS [CYL_OD], 
+    [PatientRefraction].[AXIS_OD] AS [AXIS_OD], 
+    [PatientRefraction].[VISION_OD] AS [VISION_OD], 
+    [PatientRefraction].[SPH_OS] AS [SPH_OS], 
+    [PatientRefraction].[CYL_OS] AS [CYL_OS], 
+    [PatientRefraction].[AXIS_OS] AS [AXIS_OS], 
+    [PatientRefraction].[VISION_OS] AS [VISION_OS], 
+    [PatientRefraction].[VISITDATE] AS [VISITDATE]
+    FROM [dbo].[PatientRefraction] AS [PatientRefraction]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PatientSummary" EntityType="Self.PatientSummary" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PatientSummary].[Id] AS [Id], 
+    [PatientSummary].[patient_visitid] AS [patient_visitid], 
+    [PatientSummary].[patient_id] AS [patient_id], 
+    [PatientSummary].[med_id] AS [med_id], 
+    [PatientSummary].[med_name] AS [med_name], 
+    [PatientSummary].[med_qty] AS [med_qty], 
+    [PatientSummary].[med_price] AS [med_price], 
+    [PatientSummary].[med_Amount] AS [med_Amount], 
+    [PatientSummary].[med_Type] AS [med_Type], 
+    [PatientSummary].[create_date] AS [create_date]
+    FROM [dbo].[PatientSummary] AS [PatientSummary]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Patientvisit].[Id] AS [Id], 
+    [Patientvisit].[patient_visitid] AS [patient_visitid], 
+    [Patientvisit].[patient_id] AS [patient_id], 
+    [Patientvisit].[patient_name] AS [patient_name], 
+    [Patientvisit].[patient_gender] AS [patient_gender], 
+    [Patientvisit].[patient_eye] AS [patient_eye], 
+    [Patientvisit].[patient_Complaint] AS [patient_Complaint], 
+    [Patientvisit].[Visitdate] AS [Visitdate]
+    FROM [dbo].[Patientvisit] AS [Patientvisit]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Payment_tbl].[Id] AS [Id], 
+    [Payment_tbl].[paymentid] AS [paymentid], 
+    [Payment_tbl].[patient_id] AS [patient_id], 
+    [Payment_tbl].[patient_visitid] AS [patient_visitid], 
+    [Payment_tbl].[patient_name] AS [patient_name], 
+    [Payment_tbl].[patient_med_amount] AS [patient_med_amount], 
+    [Payment_tbl].[patient_conslt_amount] AS [patient_conslt_amount], 
+    [Payment_tbl].[patient_total_amount] AS [patient_total_amount], 
+    [Payment_tbl].[payment_mode] AS [payment_mode], 
+    [Payment_tbl].[payment_date] AS [payment_date], 
+    [Payment_tbl].[nextvisit] AS [nextvisit]
+    FROM [dbo].[Payment_tbl] AS [Payment_tbl]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Patient_Med_Detail" EntityType="Self.Patient_Med_Detail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Patient_Med_Detail].[Id] AS [Id], 
@@ -192,15 +280,28 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
     FROM [dbo].[Patient_Visit_Detail] AS [Patient_Visit_Detail]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DOCOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Medicin_tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Qty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Med_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Creat_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="PatientDetail">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -215,7 +316,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="SPH_OD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -228,51 +329,11 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="VISION_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="VISITDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Patientvisit">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityContainer Name="DOPEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
-          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" />
-          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
-          <EntitySet Name="Medicin_tbl" EntityType="DOPModel.Medicin_tbl" />
-          <EntitySet Name="PatientSummary" EntityType="DOPModel.PatientSummary" />
-          <EntitySet Name="Payment_tbl" EntityType="DOPModel.Payment_tbl" />
-          <EntitySet Name="Patient_Visit_Detail" EntityType="DOPModel.Patient_Visit_Detail" />
-          <EntitySet Name="Patient_Med_Detail" EntityType="DOPModel.Patient_Med_Detail" />
-          <EntitySet Name="Patient_Ref_Detail" EntityType="DOPModel.Patient_Ref_Detail" />
-          <FunctionImport Name="SumProcedure" ReturnType="Collection(DOPModel.SumProcedure_Result)" />
-          <FunctionImport Name="GetPre_VisitDetail1" ReturnType="Collection(DOPModel.GetPre_VisitDetail1_Result1)">
-            <Parameter Name="param1" Mode="In" Type="String" />
-          </FunctionImport>
-        </EntityContainer>
-        <EntityType Name="Medicin_tbl">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Med_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Med_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Med_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Med_Qty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Med_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Creat_Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="PatientSummary">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="med_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -283,11 +344,24 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="med_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="create_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Patientvisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Payment_tbl">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="paymentid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -297,22 +371,6 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="patient_total_amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="payment_mode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="payment_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="nextvisit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Patient_Visit_Detail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="nextvisit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Patient_Med_Detail">
@@ -341,24 +399,38 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Name="VISION_OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <ComplexType Name="SumProcedure_Result">
-          <Property Type="String" Name="payment_date" Nullable="true" />
-          <Property Type="Decimal" Name="Sumtotal" Nullable="true" Precision="38" Scale="2" />
-        </ComplexType>
+        <EntityType Name="Patient_Visit_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="patient_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_eye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_visitid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="patient_Complaint" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Visitdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nextvisit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DOPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Medicin_tbl" EntityType="Self.Medicin_tbl" />
+          <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" />
+          <EntitySet Name="PatientRefraction" EntityType="Self.PatientRefraction" />
+          <EntitySet Name="PatientSummary" EntityType="Self.PatientSummary" />
+          <EntitySet Name="Patientvisit" EntityType="Self.Patientvisit" />
+          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" />
+          <EntitySet Name="Patient_Med_Detail" EntityType="Self.Patient_Med_Detail" />
+          <EntitySet Name="Patient_Ref_Detail" EntityType="Self.Patient_Ref_Detail" />
+          <EntitySet Name="Patient_Visit_Detail" EntityType="Self.Patient_Visit_Detail" />
+          <FunctionImport Name="GetPre_VisitDetail1" ReturnType="Collection(DOCOPModel.GetPre_VisitDetail1_Result)">
+            <Parameter Name="param1" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SumProcedure" ReturnType="Collection(DOCOPModel.SumProcedure_Result)" />
+        </EntityContainer>
         <ComplexType Name="GetPre_VisitDetail1_Result">
-          <Property Type="String" Name="Visitdate" Nullable="true" />
-          <Property Type="String" Name="patient_Complaint" Nullable="true" />
-          <Property Type="String" Name="med_name" Nullable="true" />
-          <Property Type="String" Name="AXIS_OD" Nullable="true" />
-          <Property Type="String" Name="CYL_OD" Nullable="true" />
-          <Property Type="String" Name="SPH_OD" Nullable="true" />
-          <Property Type="String" Name="VISION_OD" Nullable="true" />
-          <Property Type="String" Name="AXIS_OS" Nullable="true" />
-          <Property Type="String" Name="CYL_OS" Nullable="true" />
-          <Property Type="String" Name="SPH_OS" Nullable="true" />
-          <Property Type="String" Name="VISION_OS" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="GetPre_VisitDetail1_Result1">
           <Property Type="String" Name="patient_eye" Nullable="true" />
           <Property Type="String" Name="Visitdate" Nullable="true" />
           <Property Type="String" Name="patient_Complaint" Nullable="true" />
@@ -373,14 +445,31 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
           <Property Type="String" Name="SPH_OS" Nullable="true" />
           <Property Type="String" Name="VISION_OS" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="SumProcedure_Result">
+          <Property Type="String" Name="payment_date" Nullable="true" />
+          <Property Type="Decimal" Name="Sumtotal" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DOPModelStoreContainer" CdmEntityContainer="DOPEntities">
+        <EntityContainerMapping StorageEntityContainer="DOCOPModelStoreContainer" CdmEntityContainer="DOPEntities">
+          <EntitySetMapping Name="Medicin_tbl">
+            <EntityTypeMapping TypeName="DOCOPModel.Medicin_tbl">
+              <MappingFragment StoreEntitySet="Medicin_tbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Med_Id" ColumnName="Med_Id" />
+                <ScalarProperty Name="Med_Name" ColumnName="Med_Name" />
+                <ScalarProperty Name="Med_type" ColumnName="Med_type" />
+                <ScalarProperty Name="Med_Qty" ColumnName="Med_Qty" />
+                <ScalarProperty Name="Med_Price" ColumnName="Med_Price" />
+                <ScalarProperty Name="Creat_Date" ColumnName="Creat_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PatientDetail">
-            <EntityTypeMapping TypeName="DOPModel.PatientDetail">
+            <EntityTypeMapping TypeName="DOCOPModel.PatientDetail">
               <MappingFragment StoreEntitySet="PatientDetail">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
@@ -396,7 +485,7 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PatientRefraction">
-            <EntityTypeMapping TypeName="DOPModel.PatientRefraction">
+            <EntityTypeMapping TypeName="DOCOPModel.PatientRefraction">
               <MappingFragment StoreEntitySet="PatientRefraction">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
@@ -413,8 +502,24 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PatientSummary">
+            <EntityTypeMapping TypeName="DOCOPModel.PatientSummary">
+              <MappingFragment StoreEntitySet="PatientSummary">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="med_id" ColumnName="med_id" />
+                <ScalarProperty Name="med_name" ColumnName="med_name" />
+                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
+                <ScalarProperty Name="med_price" ColumnName="med_price" />
+                <ScalarProperty Name="med_Amount" ColumnName="med_Amount" />
+                <ScalarProperty Name="med_Type" ColumnName="med_Type" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patientvisit">
-            <EntityTypeMapping TypeName="DOPModel.Patientvisit">
+            <EntityTypeMapping TypeName="DOCOPModel.Patientvisit">
               <MappingFragment StoreEntitySet="Patientvisit">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
@@ -427,108 +532,71 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Medicin_tbl">
-            <EntityTypeMapping TypeName="DOPModel.Medicin_tbl">
-              <MappingFragment StoreEntitySet="Medicin_tbl">
-                <ScalarProperty Name="Creat_Date" ColumnName="Creat_Date" />
-                <ScalarProperty Name="Med_Price" ColumnName="Med_Price" />
-                <ScalarProperty Name="Med_Qty" ColumnName="Med_Qty" />
-                <ScalarProperty Name="Med_type" ColumnName="Med_type" />
-                <ScalarProperty Name="Med_Name" ColumnName="Med_Name" />
-                <ScalarProperty Name="Med_Id" ColumnName="Med_Id" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PatientSummary">
-            <EntityTypeMapping TypeName="DOPModel.PatientSummary">
-              <MappingFragment StoreEntitySet="PatientSummary">
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="med_Type" ColumnName="med_Type" />
-                <ScalarProperty Name="med_Amount" ColumnName="med_Amount" />
-                <ScalarProperty Name="med_price" ColumnName="med_price" />
-                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
-                <ScalarProperty Name="med_name" ColumnName="med_name" />
-                <ScalarProperty Name="med_id" ColumnName="med_id" />
-                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
-                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Payment_tbl">
-            <EntityTypeMapping TypeName="DOPModel.Payment_tbl">
+            <EntityTypeMapping TypeName="DOCOPModel.Payment_tbl">
               <MappingFragment StoreEntitySet="Payment_tbl">
-                <ScalarProperty Name="nextvisit" ColumnName="nextvisit" />
-                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
-                <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
-                <ScalarProperty Name="patient_total_amount" ColumnName="patient_total_amount" />
-                <ScalarProperty Name="patient_conslt_amount" ColumnName="patient_conslt_amount" />
-                <ScalarProperty Name="patient_med_amount" ColumnName="patient_med_amount" />
-                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
-                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
-                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="paymentid" ColumnName="paymentid" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Patient_Visit_Detail">
-            <EntityTypeMapping TypeName="DOPModel.Patient_Visit_Detail">
-              <MappingFragment StoreEntitySet="Patient_Visit_Detail">
-                <ScalarProperty Name="nextvisit" ColumnName="nextvisit" />
-                <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
-                <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
-                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
-                <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
-                <ScalarProperty Name="patient_gender" ColumnName="patient_gender" />
-                <ScalarProperty Name="patient_city" ColumnName="patient_city" />
-                <ScalarProperty Name="patient_mobile" ColumnName="patient_mobile" />
-                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
                 <ScalarProperty Name="patient_id" ColumnName="patient_id" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
+                <ScalarProperty Name="patient_med_amount" ColumnName="patient_med_amount" />
+                <ScalarProperty Name="patient_conslt_amount" ColumnName="patient_conslt_amount" />
+                <ScalarProperty Name="patient_total_amount" ColumnName="patient_total_amount" />
+                <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="nextvisit" ColumnName="nextvisit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Patient_Med_Detail">
-            <EntityTypeMapping TypeName="DOPModel.Patient_Med_Detail">
+            <EntityTypeMapping TypeName="DOCOPModel.Patient_Med_Detail">
               <MappingFragment StoreEntitySet="Patient_Med_Detail">
-                <ScalarProperty Name="med_Type" ColumnName="med_Type" />
-                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
-                <ScalarProperty Name="med_price" ColumnName="med_price" />
-                <ScalarProperty Name="med_name" ColumnName="med_name" />
-                <ScalarProperty Name="med_id" ColumnName="med_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="med_id" ColumnName="med_id" />
+                <ScalarProperty Name="med_name" ColumnName="med_name" />
+                <ScalarProperty Name="med_price" ColumnName="med_price" />
+                <ScalarProperty Name="med_qty" ColumnName="med_qty" />
+                <ScalarProperty Name="med_Type" ColumnName="med_Type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Patient_Ref_Detail">
-            <EntityTypeMapping TypeName="DOPModel.Patient_Ref_Detail">
+            <EntityTypeMapping TypeName="DOCOPModel.Patient_Ref_Detail">
               <MappingFragment StoreEntitySet="Patient_Ref_Detail">
-                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
-                <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
-                <ScalarProperty Name="VISION_OD" ColumnName="VISION_OD" />
-                <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
-                <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />
-                <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
-                <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
-                <ScalarProperty Name="AXIS_OS" ColumnName="AXIS_OS" />
-                <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AXIS_OD" ColumnName="AXIS_OD" />
+                <ScalarProperty Name="AXIS_OS" ColumnName="AXIS_OS" />
+                <ScalarProperty Name="CYL_OD" ColumnName="CYL_OD" />
+                <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
+                <ScalarProperty Name="SPH_OD" ColumnName="SPH_OD" />
+                <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
+                <ScalarProperty Name="VISION_OD" ColumnName="VISION_OD" />
+                <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SumProcedure" FunctionName="DOPModel.Store.SumProcedure">
+          <EntitySetMapping Name="Patient_Visit_Detail">
+            <EntityTypeMapping TypeName="DOCOPModel.Patient_Visit_Detail">
+              <MappingFragment StoreEntitySet="Patient_Visit_Detail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+                <ScalarProperty Name="patient_name" ColumnName="patient_name" />
+                <ScalarProperty Name="patient_mobile" ColumnName="patient_mobile" />
+                <ScalarProperty Name="patient_city" ColumnName="patient_city" />
+                <ScalarProperty Name="patient_gender" ColumnName="patient_gender" />
+                <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
+                <ScalarProperty Name="patient_visitid" ColumnName="patient_visitid" />
+                <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
+                <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
+                <ScalarProperty Name="nextvisit" ColumnName="nextvisit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetPre_VisitDetail1" FunctionName="DOCOPModel.Store.GetPre_VisitDetail1">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DOPModel.SumProcedure_Result">
-                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
-                <ScalarProperty Name="Sumtotal" ColumnName="Sumtotal" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPre_VisitDetail1" FunctionName="DOPModel.Store.GetPre_VisitDetail1">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DOPModel.GetPre_VisitDetail1_Result1">
+              <ComplexTypeMapping TypeName="DOCOPModel.GetPre_VisitDetail1_Result">
                 <ScalarProperty Name="patient_eye" ColumnName="patient_eye" />
                 <ScalarProperty Name="Visitdate" ColumnName="Visitdate" />
                 <ScalarProperty Name="patient_Complaint" ColumnName="patient_Complaint" />
@@ -542,6 +610,14 @@ warning 6002: The table/view 'C:\DATA\DOP.MDF.dbo.Patient_Visit_Detail' does not
                 <ScalarProperty Name="CYL_OS" ColumnName="CYL_OS" />
                 <ScalarProperty Name="SPH_OS" ColumnName="SPH_OS" />
                 <ScalarProperty Name="VISION_OS" ColumnName="VISION_OS" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SumProcedure" FunctionName="DOCOPModel.Store.SumProcedure">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOCOPModel.SumProcedure_Result">
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="Sumtotal" ColumnName="Sumtotal" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

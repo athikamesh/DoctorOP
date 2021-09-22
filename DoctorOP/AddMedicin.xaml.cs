@@ -23,10 +23,15 @@ namespace DoctorOP
         public AddMedicin()
         {
             InitializeComponent();
-            txt_medid.Text = GetPateintID().ToString();
+            try
+            {
+                txt_medid.Text = GetPateintID().ToString();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
         int GetPateintID()
         {
+            
             int ID = 1000;
             var pid = dOPEntities.Medicin_tbl.OrderByDescending(id => id.Id).ToList();
             if (pid.Count > 0)

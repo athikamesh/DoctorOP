@@ -588,6 +588,35 @@ namespace DoctorOP
             catch (Exception ex) { }
         }
 
+        private void Searchgrid_visit_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            object item = Searchgrid_visit.SelectedItem;
+            string ID = (Searchgrid_visit.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            if (item!=null)
+            {
+                var patientdetail = dOPEntities.PatientDetail.Where(b => b.patient_id == ID).SingleOrDefault();
+                if(patientdetail!=null)
+                {
+                    txt_patientID.Text = patientdetail.patient_id;
+                    txt_patientname.Text = patientdetail.patient_name;
+                    txt_mobile.Text = patientdetail.patient_mobile;
+                    txt_occupation.Text = patientdetail.patient_occupation;
+                    txt_address.Text = patientdetail.patient_address;
+                    txt_city.Text = patientdetail.patient_city;
+                    cmb_district.Text = patientdetail.patient_district;
+                    txt_pincode.Text = patientdetail.patient_pincode;
+                    Tab0.IsSelected = true;
+                    //rbt_female.IsChecked = false;
+                    //rbt_male.IsChecked = false;
+                    //rbt_other.IsChecked = false;
+                    //rbt_od.IsChecked = false;
+                    //rbt_os.IsChecked = false;
+                    //rbt_odos.IsChecked = false;
+                   
+                }
+            }
+        }
+
         void Load_LVC(string PatientId)
         {
             try

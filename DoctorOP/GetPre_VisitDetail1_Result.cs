@@ -13,9 +13,11 @@ namespace DoctorOP
     
     public partial class GetPre_VisitDetail1_Result
     {
+        public string patient_eye { get; set; }
         public string Visitdate { get; set; }
         public string patient_Complaint { get; set; }
         public string med_name { get; set; }
+        public string med_qty { get; set; }
         public string AXIS_OD { get; set; }
         public string CYL_OD { get; set; }
         public string SPH_OD { get; set; }
