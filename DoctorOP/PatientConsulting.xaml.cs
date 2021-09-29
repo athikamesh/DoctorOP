@@ -20,7 +20,7 @@ namespace DoctorOP
     /// </summary>
     public partial class PatientConsulting : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         string gender = "",eye=""; int patientvisitid = 0;
         List<DefaultClass.MedicinList> MList = new List<DefaultClass.MedicinList>();
         List<DefaultClass.MedicinList> AMList = new List<DefaultClass.MedicinList>();

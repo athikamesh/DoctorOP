@@ -19,7 +19,7 @@ namespace DoctorOP
     /// </summary>
     public partial class PatientRef : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         public PatientRef(string visitid)
         {
             InitializeComponent();

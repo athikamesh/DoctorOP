@@ -23,7 +23,7 @@ namespace DoctorOP
     /// </summary>
     public partial class MainWindow : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }

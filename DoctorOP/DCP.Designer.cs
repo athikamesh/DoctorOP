@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\2021Project\DoctorOP\DoctorOP\DoctorOP\DOPDM.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\RS Athikamesh\Source\Repos\athikamesh\DoctorOP\DoctorOP\DCP.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

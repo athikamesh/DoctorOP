@@ -96,43 +96,53 @@
     <Compile Include="Control\LastVisitControl.xaml.cs">
       <DependentUpon>LastVisitControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DOPDM.cs">
+    <Compile Include="DCP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DCP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DCP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCP.edmx</DependentUpon>
     </Compile>
     <Compile Include="GetPre_VisitDetail1_Result.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Medicin_tbl.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientDetail.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientRefraction.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientSummary.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Patientvisit.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Med_Detail.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Ref_Detail.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Visit_Detail.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="Payment_tbl.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Compile Include="SumProcedure_Result.cs">
-      <DependentUpon>DOPDM.tt</DependentUpon>
+      <DependentUpon>DCP.tt</DependentUpon>
     </Compile>
     <Page Include="AddMedicin.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -159,16 +169,6 @@
       <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="DefaultClass\PatientClass.cs" />
-    <Compile Include="DOPDM.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDM.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DOPDM.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DOPDM.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -221,12 +221,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\DoctorOP.exe.config" />
-    <EntityDeploy Include="DOPDM.edmx">
+    <EntityDeploy Include="DCP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DOPDM.Designer.cs</LastGenOutput>
+      <LastGenOutput>DCP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DOPDM.edmx.diagram">
-      <DependentUpon>DOPDM.edmx</DependentUpon>
+    <None Include="DCP.edmx.diagram">
+      <DependentUpon>DCP.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -249,18 +249,18 @@
     </Content>
     <Content Include="bin\Debug\EntityFramework.dll" />
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="DCP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DCP.edmx</DependentUpon>
+      <LastGenOutput>DCP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DCP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DCP.edmx</DependentUpon>
+      <LastGenOutput>DCP.cs</LastGenOutput>
+    </Content>
     <Content Include="DOP.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DOPDM.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DOPDM.edmx</DependentUpon>
-      <LastGenOutput>DOPDM.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DOPDM.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DOPDM.edmx</DependentUpon>
-      <LastGenOutput>DOPDM.cs</LastGenOutput>
     </Content>
     <Content Include="DOP_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -19,7 +19,7 @@ namespace DoctorOP
     /// </summary>
     public partial class PaymentScreen : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         public PaymentScreen(string visitid)
         {
             InitializeComponent();

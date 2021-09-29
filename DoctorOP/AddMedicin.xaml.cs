@@ -19,7 +19,7 @@ namespace DoctorOP
     /// </summary>
     public partial class AddMedicin : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         public AddMedicin()
         {
             InitializeComponent();

@@ -15,10 +15,10 @@ namespace DoctorOP
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class DOPEntities : DbContext
+    public partial class DOCOPEntities : DbContext
     {
-        public DOPEntities()
-            : base("name=DOPEntities")
+        public DOCOPEntities()
+            : base("name=DOCOPEntities")
         {
         }
     

@@ -19,7 +19,7 @@ namespace DoctorOP
     /// </summary>
     public partial class MedicinList : Window
     {
-        DOPEntities dOPEntities = new DOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();
         List<DefaultClass.MedicinList> MList = new List<DefaultClass.MedicinList>();
         public MedicinList(string visitid)
         {
