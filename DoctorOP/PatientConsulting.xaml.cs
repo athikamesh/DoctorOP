@@ -21,7 +21,7 @@ namespace DoctorOP
     public partial class PatientConsulting : Window
     {
         DOCOPEntities dOPEntities = new DOCOPEntities();
-        string gender = "",eye=""; int patientvisitid = 0;
+        string gender = "",eye=""; int patientvisitid = 0;bool Followup = false;
         List<DefaultClass.MedicinList> MList = new List<DefaultClass.MedicinList>();
         List<DefaultClass.MedicinList> AMList = new List<DefaultClass.MedicinList>();
         List<DefaultClass.PatientVisit_Class> PVList = new List<DefaultClass.PatientVisit_Class>();
@@ -93,9 +93,9 @@ namespace DoctorOP
         {
             try
             {
-                if (txt_patientname.Text != "" && txt_mobile.Text != "" && gender != "" && eye != "")
+                if (txt_patientname.Text != "" && txt_mobile.Text != "" && gender != "" && eye != "" && Followup==false)
                 {
-                    patientvisitid = GetPateintVisitID();
+                    
                     PatientDetail patientDetail = new PatientDetail();
                     patientDetail.patient_id = txt_patientID.Text;
                     patientDetail.patient_name = txt_patientname.Text;
@@ -106,7 +106,16 @@ namespace DoctorOP
                     patientDetail.patient_district = cmb_district.Text;
                     patientDetail.patient_pincode = txt_pincode.Text;
                     patientDetail.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
-
+                    dOPEntities.PatientDetail.Add(patientDetail);
+                    int i = dOPEntities.SaveChanges();
+                }
+                else
+                {
+                   // MessageBox.Show("Enter all the details..!", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                if (txt_patientname.Text != "" && txt_mobile.Text != "" && gender != "" && eye != "" )
+                {
+                    patientvisitid = GetPateintVisitID();
                     Patientvisit patientvisit = new Patientvisit();
                     patientvisit.patient_visitid = patientvisitid.ToString();
                     patientvisit.patient_id = txt_patientID.Text;
@@ -114,9 +123,7 @@ namespace DoctorOP
                     patientvisit.patient_gender = gender;
                     patientvisit.patient_eye = eye;
                     patientvisit.patient_Complaint = cmb_ccomplaint.Text + txt_ocopmlaint.Text;
-                    patientvisit.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");
-
-                    dOPEntities.PatientDetail.Add(patientDetail);
+                    patientvisit.Visitdate = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss");                   
                     dOPEntities.Patientvisit.Add(patientvisit);
                     int i = dOPEntities.SaveChanges();
                     if (i > 0) { Tab1.IsSelected = true; }
@@ -341,7 +348,7 @@ namespace DoctorOP
                     if (i > 0)
                     {
                         Tab0.IsSelected = true;
-                        Clear_Text(); GetPatientVisit("");
+                        Clear_Text(); GetPatientVisit("");Followup = false;
                     }
                 }
             }
@@ -489,7 +496,7 @@ namespace DoctorOP
             txt_ocopmlaint.Clear();
             txt_searchpatient.Clear();
             txt_patientID.Text = GetPateintID().ToString();
-            cmb_days.SelectedIndex = 0;
+            cmb_days.SelectedIndex = 0;Followup = false;
         }
 
         private void btn_tab2_cancel_Click(object sender, RoutedEventArgs e)
@@ -605,13 +612,8 @@ namespace DoctorOP
                     txt_city.Text = patientdetail.patient_city;
                     cmb_district.Text = patientdetail.patient_district;
                     txt_pincode.Text = patientdetail.patient_pincode;
-                    Tab0.IsSelected = true;
-                    //rbt_female.IsChecked = false;
-                    //rbt_male.IsChecked = false;
-                    //rbt_other.IsChecked = false;
-                    //rbt_od.IsChecked = false;
-                    //rbt_os.IsChecked = false;
-                    //rbt_odos.IsChecked = false;
+                    Tab0.IsSelected = true;Followup = true;
+                   
                    
                 }
             }

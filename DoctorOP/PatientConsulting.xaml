@@ -8,14 +8,14 @@
         xmlns:local="clr-namespace:DoctorOP"
     
         mc:Ignorable="d" Width="1300" Height="760"
-        Title="PatientConsulting" WindowState="Normal" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="PatientConsulting" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="765*"/>
             <ColumnDefinition Width="479*"/>
         </Grid.ColumnDefinitions>
         <TabControl x:Name="Tab_Control" Grid.ColumnSpan="2" >
-            <TabItem x:Name="Tab0" Header="Patient Info" IsEnabled="True">
+            <TabItem x:Name="Tab0" Header="Patient Info" IsEnabled="True" FontSize="18">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="267*"/>
@@ -156,7 +156,7 @@
                    
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab1" Header="Refraction" IsEnabled="False">
+            <TabItem x:Name="Tab1" Header="Refraction" IsEnabled="False" FontSize="18">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -234,7 +234,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab2" Header="Patient Summary" IsEnabled="False">
+            <TabItem x:Name="Tab2" Header="Patient Summary" IsEnabled="False" FontSize="18">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="500"></ColumnDefinition>
@@ -276,7 +276,7 @@
                             </StackPanel>
                             <TextBox x:Name="txt_complaint_tab3" Grid.Row="5" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                             <StackPanel x:Name="LVCList" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2">
-                               
+                       
                             </StackPanel>
                         </Grid>
                     </Border>
@@ -536,7 +536,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem x:Name="Tab3" Header="Payment" IsEnabled="False">
+            <TabItem x:Name="Tab3" Header="Payment" IsEnabled="False" FontSize="18">
                 <Border Width="500" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2">
                     <Grid >
                         <Grid.RowDefinitions>
@@ -646,7 +646,7 @@
 
 
             </TabItem>
-            <TabItem x:Name="Tab4" Header="Patient List" >
+            <TabItem x:Name="Tab4" Header="Patient List" FontSize="18">
                 <Border Grid.Row="3" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
                     <Grid>
                         <Grid.RowDefinitions>

@@ -129,7 +129,6 @@ warning 6002: The table/view 'DOCOP.dbo.Patient_Visit_Detail' does not have a pr
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="patient_id" Type="varchar(max)" />
           <Property Name="patient_name" Type="varchar(max)" />
           <Property Name="patient_mobile" Type="varchar(max)" />
@@ -140,6 +139,7 @@ warning 6002: The table/view 'DOCOP.dbo.Patient_Visit_Detail' does not have a pr
           <Property Name="patient_Complaint" Type="varchar(max)" />
           <Property Name="Visitdate" Type="varchar(max)" />
           <Property Name="nextvisit" Type="varchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" />
         </EntityType>
         <Function Name="GetPre_VisitDetail1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPre-VisitDetail1">
           <Parameter Name="param1" Type="varchar" Mode="In" />
@@ -178,7 +178,6 @@ warning 6002: The table/view 'DOCOP.dbo.Patient_Visit_Detail' does not have a pr
           </EntitySet>
           <EntitySet Name="Patient_Visit_Detail" EntityType="Self.Patient_Visit_Detail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Patient_Visit_Detail].[Id] AS [Id], 
     [Patient_Visit_Detail].[patient_id] AS [patient_id], 
     [Patient_Visit_Detail].[patient_name] AS [patient_name], 
     [Patient_Visit_Detail].[patient_mobile] AS [patient_mobile], 
@@ -188,7 +187,8 @@ warning 6002: The table/view 'DOCOP.dbo.Patient_Visit_Detail' does not have a pr
     [Patient_Visit_Detail].[patient_visitid] AS [patient_visitid], 
     [Patient_Visit_Detail].[patient_Complaint] AS [patient_Complaint], 
     [Patient_Visit_Detail].[Visitdate] AS [Visitdate], 
-    [Patient_Visit_Detail].[nextvisit] AS [nextvisit]
+    [Patient_Visit_Detail].[nextvisit] AS [nextvisit], 
+    [Patient_Visit_Detail].[Id] AS [Id]
     FROM [dbo].[Patient_Visit_Detail] AS [Patient_Visit_Detail]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
