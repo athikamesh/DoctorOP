@@ -634,8 +634,8 @@
                         </DataGrid>
                         <TextBox x:Name="txt_patientID_tab4" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         <TextBox x:Name="txt_patientname_tab4" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
-                        <TextBox x:Name="txt_med_amt_tab4" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
-                        <TextBox x:Name="txt_con_amt_tab4" Grid.Row="5" Grid.Column="1" Text="200" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_med_amt_tab4" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2" TextChanged="Txt_med_amt_tab4_TextChanged"></TextBox>
+                        <TextBox x:Name="txt_con_amt_tab4" Grid.Row="5" Grid.Column="1" Text="150" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2" TextChanged="Txt_con_amt_tab4_TextChanged"></TextBox>
                         <TextBox x:Name="txt_tot_amt_tab4" Grid.Row="6" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
                         <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                             <Button x:Name="btn_tab4_next" Content="Finish" Width="150" FontSize="16" Margin="5" Click="Btn_tab4_next_Click" Style="{StaticResource Round_Corner}"></Button>

@@ -616,6 +616,30 @@ namespace DoctorOP
                 }
             }
         }
+        
+        private void Txt_med_amt_tab4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                decimal MedAmount = decimal.Parse(txt_med_amt_tab4.Text);
+                decimal ConsAmount = decimal.Parse(txt_con_amt_tab4.Text);
+                decimal TotalAoumt = MedAmount + ConsAmount;
+                txt_tot_amt_tab4.Text = TotalAoumt.ToString();
+            }
+            catch (Exception ex) { }
+        }
+
+        private void Txt_con_amt_tab4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                decimal MedAmount = decimal.Parse(txt_med_amt_tab4.Text);
+                decimal ConsAmount = decimal.Parse(txt_con_amt_tab4.Text);
+                decimal TotalAoumt = MedAmount + ConsAmount;
+                txt_tot_amt_tab4.Text = TotalAoumt.ToString();
+            }
+            catch (Exception ex) { }
+        }
 
         void Load_LVC(string PatientId)
         {
