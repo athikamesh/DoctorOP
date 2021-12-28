@@ -52,5 +52,6 @@ namespace DoctorOP.DefaultClass
         public String med_price { get; set; }
         public String med_type { get; set; }
         public String med_qty { get; set; }
+        public String med_total { get; set; }
     }
 }

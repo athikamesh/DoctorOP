@@ -255,8 +255,9 @@ namespace DoctorOP
                     DML.med_Id = MedDet.Med_Id;
                     DML.med_name = MedDet.Med_Name;
                     DML.med_price = MedDet.Med_Price;
+                    DML.med_total = (Double.Parse(MedDet.Med_Price) * double.Parse(txt_qty.Text)).ToString();
                     DML.med_type = MedDet.Med_type;
-                    DML.med_qty = txt_qty.Text;
+                    DML.med_qty = txt_qty.Text;                    
                     AMList.Add(DML);
                 }
                 Searchgrid.ItemsSource = AMList;
@@ -306,8 +307,8 @@ namespace DoctorOP
                         PS.med_name = med.med_name;
                         PS.med_qty = med.med_qty;
                         PS.med_Type = med.med_type;
-                        PS.med_price = med.med_price;
-                        amt += double.Parse(med.med_price);
+                        PS.med_price = med.med_price;                        
+                        amt += double.Parse(med.med_total);
                         PS.med_Amount = amt.ToString();
                         PS.create_date = DateTime.Now.ToString("dd-MM-yyyy");
                         dOPEntities.PatientSummary.Add(PS);
@@ -502,14 +503,15 @@ namespace DoctorOP
         private void btn_tab2_cancel_Click(object sender, RoutedEventArgs e)
         {
             //Tab1
-            txt_SPH_OD.Clear();
-            txt_CYL_OD.Clear();
-            txt_AXIS_OD.Clear();
-            txt_VISION_OD.Clear();
-            txt_SPH_OS.Clear();
-            txt_CYL_OS.Clear();
-            txt_AXIS_OS.Clear();
-            txt_VISION_OS.Clear();
+            txt_SPH_OD.Text = "0";
+            txt_CYL_OD.Text = "0";
+            txt_AXIS_OD.Text = "0";
+            txt_VISION_OD.Text = "6/6";
+            txt_SPH_OS.Text = "0";
+            txt_CYL_OS.Text = "0";
+            txt_AXIS_OS.Text = "0";
+            txt_VISION_OS.Text = "6/6";
+            Tab0.IsSelected = true;
         }
 
         private void btn_tab3_cancel_Click(object sender, RoutedEventArgs e)
@@ -529,7 +531,8 @@ namespace DoctorOP
             txt_qty.Clear();
             txt_medicin_name.Text = "";
             Searchgrid.ItemsSource = null;
-            AMList.Clear();
+            AMList.Clear();No = 0;
+            Tab1.IsSelected = true;
         }
 
         private void btn_tab4_cancel_Click(object sender, RoutedEventArgs e)

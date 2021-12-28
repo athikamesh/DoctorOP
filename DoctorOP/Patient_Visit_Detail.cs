@@ -14,7 +14,6 @@ namespace DoctorOP
     
     public partial class Patient_Visit_Detail
     {
-        public int Id { get; set; }
         public string patient_id { get; set; }
         public string patient_name { get; set; }
         public string patient_mobile { get; set; }
@@ -25,5 +24,6 @@ namespace DoctorOP
         public string patient_Complaint { get; set; }
         public string Visitdate { get; set; }
         public string nextvisit { get; set; }
+        public int Id { get; set; }
     }
 }

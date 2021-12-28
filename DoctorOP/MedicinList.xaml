@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoctorOP"
         mc:Ignorable="d"
-        Title="MedicinList" Height="450" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}">
+        Title="MedicinList" Height="450" Width="790" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}">
     <Border Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="0" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -61,14 +61,19 @@
                         <DataGridTextColumn.Header>
                             <TextBlock Text="Price"/>
                         </DataGridTextColumn.Header>
-                    </DataGridTextColumn>                 
+                    </DataGridTextColumn>
+                    <DataGridTextColumn x:Name="item_AMOUNTColumn" Binding="{Binding med_total}"  Width="100" CanUserResize="False">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="Amount"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
           
-            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-               
-                <Button x:Name="btn_cancel" Content="Close" Width="150" FontSize="18"  Margin="5" Click="btn_cancel_Click" Style="{DynamicResource Round_Corner}"></Button>
-            </StackPanel>
+            <WrapPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right">
+                <Button x:Name="btn_upload" Content="Upload" Width="150" Height="40" FontSize="18"  Margin="5" Click="btn_upload_Click" Style="{DynamicResource Round_Corner}"></Button>
+                <Button x:Name="btn_cancel" Content="Close" Width="150" Height="40" FontSize="18"  Margin="5" Click="btn_cancel_Click" Style="{DynamicResource Round_Corner}"></Button>
+            </WrapPanel>
 
         </Grid>
     </Border>

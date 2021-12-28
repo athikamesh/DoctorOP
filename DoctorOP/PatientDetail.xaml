@@ -1,0 +1,500 @@
+﻿<Page x:Class="DoctorOP.PatientDetail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:auto="clr-namespace:DoctorOP.AutoComplete"
+      xmlns:local="clr-namespace:DoctorOP"
+      mc:Ignorable="d" Title="PatientDetail" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Patient Detail" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Patient ID" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Patient Name" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Mobile" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Occupation" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="1" Grid.Column="2" Content="Address" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="2" Content="City" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="3" Grid.Column="2" Content="District" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="4" Grid.Column="2" Content="Pincode" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                    <TextBox x:Name="txt_patientID" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_patientname" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_mobile" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_occupation" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_address" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <TextBox x:Name="txt_city" Grid.Row="2" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    <ComboBox x:Name="cmb_district" Grid.Row="3" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2">
+                        <ComboBoxItem>Select</ComboBoxItem>
+                        <ComboBoxItem>Ariyalur</ComboBoxItem>
+                        <ComboBoxItem>Chengalpattu</ComboBoxItem>
+                        <ComboBoxItem>Chennai</ComboBoxItem>
+                        <ComboBoxItem>Coimbatore</ComboBoxItem>
+                        <ComboBoxItem>Cuddalore</ComboBoxItem>
+                        <ComboBoxItem>Dharmapuri</ComboBoxItem>
+                        <ComboBoxItem>Dindigul</ComboBoxItem>
+                        <ComboBoxItem>Erode</ComboBoxItem>
+                        <ComboBoxItem>Kallakurichi</ComboBoxItem>
+                        <ComboBoxItem>Kanchipuram</ComboBoxItem>
+                        <ComboBoxItem>Kanyakumari</ComboBoxItem>
+                        <ComboBoxItem>Karur</ComboBoxItem>
+                        <ComboBoxItem>Krishnagiri</ComboBoxItem>
+                        <ComboBoxItem>Madurai</ComboBoxItem>
+                        <ComboBoxItem>Nagapattinam</ComboBoxItem>
+                        <ComboBoxItem>Namakkal</ComboBoxItem>
+                        <ComboBoxItem>Nilgiris</ComboBoxItem>
+                        <ComboBoxItem>Perambalur</ComboBoxItem>
+                        <ComboBoxItem>Pudukkottai</ComboBoxItem>
+                        <ComboBoxItem>Ramanathapuram</ComboBoxItem>
+                        <ComboBoxItem>Ranipet</ComboBoxItem>
+                        <ComboBoxItem>Salem</ComboBoxItem>
+                        <ComboBoxItem>Sivaganga</ComboBoxItem>
+                        <ComboBoxItem>Tenkasi</ComboBoxItem>
+                        <ComboBoxItem>Thanjavur</ComboBoxItem>
+                        <ComboBoxItem>Theni</ComboBoxItem>
+                        <ComboBoxItem>Thoothukudi</ComboBoxItem>
+                        <ComboBoxItem>Tiruchirappalli</ComboBoxItem>
+                        <ComboBoxItem>Tirunelveli</ComboBoxItem>
+                        <ComboBoxItem>Tirupathur</ComboBoxItem>
+                        <ComboBoxItem>Tiruppur</ComboBoxItem>
+                        <ComboBoxItem>Tiruvallur</ComboBoxItem>
+                        <ComboBoxItem>Tiruvannamalai</ComboBoxItem>
+                        <ComboBoxItem>Tiruvarur</ComboBoxItem>
+                        <ComboBoxItem>Vellore</ComboBoxItem>
+                        <ComboBoxItem>Viluppuram</ComboBoxItem>
+                        <ComboBoxItem>Virudhunagar</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="txt_pincode" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                </Grid>
+
+            </Border>
+            <Border Grid.Row="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Complaint" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Gender" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Eye" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="1" Grid.Column="2" Content="Cheif Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <Label Grid.Row="2" Grid.Column="2" Content="Other Complaint" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_male" Checked="Rbt_male_Checked">Male</RadioButton>
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_female" Checked="Rbt_female_Checked">Female</RadioButton>
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_other" Checked="Rbt_other_Checked">Other</RadioButton>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_od" Checked="Rbt_od_Checked">OD</RadioButton>
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center" x:Name="rbt_os" Checked="Rbt_os_Checked">OS</RadioButton>
+                        <RadioButton Margin="5" FontSize="18" VerticalContentAlignment="Center"  x:Name="rbt_odos" Checked="Rbt_odos_Checked">Both</RadioButton>
+                    </StackPanel>
+                    <ComboBox x:Name="cmb_ccomplaint" Grid.Row="1" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2">
+                        <ComboBoxItem>Headach</ComboBoxItem>
+                        <ComboBoxItem>Irritation</ComboBoxItem>
+                        <ComboBoxItem>itching</ComboBoxItem>
+                        <ComboBoxItem>Tearing</ComboBoxItem>
+                        <ComboBoxItem>Burning</ComboBoxItem>
+                        <ComboBoxItem>Discharge or stickiness</ComboBoxItem>
+                        <ComboBoxItem>Itching</ComboBoxItem>
+                        <ComboBoxItem>Eye pain</ComboBoxItem>
+                        <ComboBoxItem>Red-eye</ComboBoxItem>
+                        <ComboBoxItem>Cloudy vision</ComboBoxItem>
+                        <ComboBoxItem>Sensitivity to light</ComboBoxItem>
+                        <ComboBoxItem>Poor vision at night</ComboBoxItem>
+                        <ComboBoxItem>Double vision</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="txt_ocopmlaint" Grid.Row="4" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="2" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>                   
+                </Grid.RowDefinitions>
+                <Border x:Name="pnl_od" Grid.Row="0"    BorderBrush="DodgerBlue" BorderThickness="2"  Grid.Column="0" Margin="5">
+                    <Grid Grid.Row="1" Grid.Column="0" Width="500">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="0"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OD" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                        <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                        <TextBox x:Name="txt_SPH_OD" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_CYL_OD" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_AXIS_OD" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_VISION_OD" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    </Grid>
+                </Border>
+                <Border x:Name="pnl_os" Grid.Row="0"  Grid.Column="1"  BorderBrush="DodgerBlue" BorderThickness="2" Margin="5" >
+                    <Grid Grid.Row="1" Grid.Column="0" Width="490">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="10"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OS" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                        <Label Grid.Row="1" Grid.Column="0" Content="SPH" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="2" Grid.Column="0" Content="CYL" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="3" Grid.Column="0" Content="AXIS" VerticalContentAlignment="Center" FontSize="18"></Label>
+                        <Label Grid.Row="4" Grid.Column="0" Content="VISION" VerticalContentAlignment="Center" FontSize="18"></Label>
+
+                        <TextBox x:Name="txt_SPH_OS" Grid.Row="1" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_CYL_OS" Grid.Row="2" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_AXIS_OS" Grid.Row="3" Grid.Column="1" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                        <TextBox x:Name="txt_VISION_OS" Grid.Row="4" Grid.Column="1" Text="6/6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+                    </Grid>
+                </Border>
+                <Border  Grid.Row="1"  BorderBrush="DodgerBlue" BorderThickness="2"  Grid.Column="0" Margin="5">
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OD Summary" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+
+                        <TextBox x:Name="txt_SUMMARY_OD" Grid.Row="1" Grid.Column="1" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+
+                    </Grid>
+                </Border>
+                <Border  Grid.Row="1"  BorderBrush="DodgerBlue" BorderThickness="2"  Grid.Column="1" Margin="5">
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="OS Summary" Foreground="White" FontSize="18" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+
+                        <TextBox x:Name="txt_SUMMARY_OS" Grid.Row="1" Grid.Column="1" Text="" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+
+                    </Grid>
+                </Border>
+            </Grid>
+           
+          
+
+        </Grid>
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" Height="500" Grid.RowSpan="2" VerticalAlignment="Top">            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="55"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Prescription" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Medicin Name" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <auto:AutoCompleteTextBox  x:Name="txt_medicin_name" Grid.Column="1"  Grid.Row="0"  Margin="0,0,2,0"  Height="40" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   Threshold="2"  Focusable="True"/>
+                    <Label Grid.Row="0" Grid.Column="2" Content="Qty" VerticalContentAlignment="Center" FontSize="18"></Label>
+                    <TextBox x:Name="txt_qty" Grid.Row="0" Grid.Column="3" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" PreviewKeyDown="Txt_qty_PreviewKeyDown"></TextBox>
+                    <Button x:Name="btn_add" Grid.Column="4" Content="Add" Click="Btn_add_Click"></Button>
+
+                </Grid>
+                <DataGrid x:Name="Searchgrid" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AlternatingRowBackground="{DynamicResource AlternateColor}"  AutoGenerateColumns="False"  EnableRowVirtualization="True"  GridLinesVisibility="None" Background="White" IsReadOnly="True" FontSize="18" >
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryFont}" />
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Height" Value="35"/>
+                            <Setter Property="FontSize" Value="14"></Setter>
+                            <Setter Property="FontWeight" Value="Normal"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.RowHeaderStyle>
+                        <Style TargetType="{x:Type DataGridRowHeader}">
+                            <Setter Property="Width" Value="0"></Setter>
+                            <Setter Property="FontWeight"  Value="Bold"></Setter>
+                        </Style>
+                    </DataGrid.RowHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="item_noColumn" Binding="{Binding Id}" Width="50" CanUserResize="False" >
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="No"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="item_SizeColumn" Binding="{Binding med_name}"  Width="280" CanUserResize="False" >
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Medicin Name"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="item_typeColumn" Binding="{Binding med_type}"  Width="100" CanUserResize="False">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Type"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                       
+                        <DataGridTextColumn x:Name="item_priceColumn" Binding="{Binding med_price}"  Width="100" CanUserResize="False">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Price"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="item_qtyColumn" Binding="{Binding med_qty}"  Width="100" CanUserResize="False">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Qty"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="item_RateColumn" Binding="{Binding med_total}"  Width="150" CanUserResize="False">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Total Amount"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <!--<DataGridTextColumn x:Name="item_TaxColumn" Binding="{Binding Tax}"  Width="100" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="Tax"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="item_AmountColumn" Binding="{Binding Amount}"  Width="150" CanUserResize="False">
+                                        <DataGridTextColumn.Header>
+                                            <TextBlock Text="Amount"/>
+                                        </DataGridTextColumn.Header>
+                                    </DataGridTextColumn>-->
+                        <DataGridTemplateColumn Width="65" >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="Delete"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <!--PreviewMouseLeftButtonUp="GridDelet_Click"-->
+                                    <Button x:Name="defbtn" Width="26" Style="{DynamicResource ImageButtonStyle}" Click="defbtn_Click">
+                                        <Path  Data="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"
+                                      StrokeThickness="60"  Stretch="Uniform" Fill="#FF3D90E2" Width="20" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Height="20">
+                                        </Path>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Next Visit" VerticalContentAlignment="Center" FontSize="18" FontWeight="SemiBold"></Label>
+                    <ComboBox x:Name="cmb_days" Grid.Column="1" Margin="4" SelectedIndex="0" VerticalContentAlignment="Center" >
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>21</ComboBoxItem>
+                        <ComboBoxItem>22</ComboBoxItem>
+                        <ComboBoxItem>23</ComboBoxItem>
+                        <ComboBoxItem>24</ComboBoxItem>
+                        <ComboBoxItem>25</ComboBoxItem>
+                        <ComboBoxItem>26</ComboBoxItem>
+                        <ComboBoxItem>27</ComboBoxItem>
+                        <ComboBoxItem>28</ComboBoxItem>
+                        <ComboBoxItem>29</ComboBoxItem>
+                        <ComboBoxItem>30</ComboBoxItem>
+                        <ComboBoxItem>31</ComboBoxItem>
+                        <ComboBoxItem>32</ComboBoxItem>
+                        <ComboBoxItem>33</ComboBoxItem>
+                        <ComboBoxItem>34</ComboBoxItem>
+                        <ComboBoxItem>35</ComboBoxItem>
+                        <ComboBoxItem>36</ComboBoxItem>
+                        <ComboBoxItem>37</ComboBoxItem>
+                        <ComboBoxItem>38</ComboBoxItem>
+                        <ComboBoxItem>39</ComboBoxItem>
+                        <ComboBoxItem>40</ComboBoxItem>
+                        <ComboBoxItem>41</ComboBoxItem>
+                        <ComboBoxItem>42</ComboBoxItem>
+                        <ComboBoxItem>43</ComboBoxItem>
+                        <ComboBoxItem>44</ComboBoxItem>
+                        <ComboBoxItem>45</ComboBoxItem>
+                        <ComboBoxItem>46</ComboBoxItem>
+                        <ComboBoxItem>47</ComboBoxItem>
+                        <ComboBoxItem>48</ComboBoxItem>
+                        <ComboBoxItem>49</ComboBoxItem>
+                        <ComboBoxItem>50</ComboBoxItem>
+                        <ComboBoxItem>51</ComboBoxItem>
+                        <ComboBoxItem>52</ComboBoxItem>
+                        <ComboBoxItem>53</ComboBoxItem>
+                        <ComboBoxItem>54</ComboBoxItem>
+                        <ComboBoxItem>55</ComboBoxItem>
+                        <ComboBoxItem>56</ComboBoxItem>
+                        <ComboBoxItem>57</ComboBoxItem>
+                        <ComboBoxItem>58</ComboBoxItem>
+                        <ComboBoxItem>59</ComboBoxItem>
+                        <ComboBoxItem>60</ComboBoxItem>
+                        <ComboBoxItem>61</ComboBoxItem>
+                        <ComboBoxItem>62</ComboBoxItem>
+                        <ComboBoxItem>63</ComboBoxItem>
+                        <ComboBoxItem>64</ComboBoxItem>
+                        <ComboBoxItem>65</ComboBoxItem>
+                        <ComboBoxItem>66</ComboBoxItem>
+                        <ComboBoxItem>67</ComboBoxItem>
+                        <ComboBoxItem>68</ComboBoxItem>
+                        <ComboBoxItem>69</ComboBoxItem>
+                        <ComboBoxItem>70</ComboBoxItem>
+                        <ComboBoxItem>71</ComboBoxItem>
+                        <ComboBoxItem>72</ComboBoxItem>
+                        <ComboBoxItem>73</ComboBoxItem>
+                        <ComboBoxItem>74</ComboBoxItem>
+                        <ComboBoxItem>75</ComboBoxItem>
+                        <ComboBoxItem>76</ComboBoxItem>
+                        <ComboBoxItem>77</ComboBoxItem>
+                        <ComboBoxItem>78</ComboBoxItem>
+                        <ComboBoxItem>79</ComboBoxItem>
+                        <ComboBoxItem>80</ComboBoxItem>
+                        <ComboBoxItem>81</ComboBoxItem>
+                        <ComboBoxItem>82</ComboBoxItem>
+                        <ComboBoxItem>83</ComboBoxItem>
+                        <ComboBoxItem>84</ComboBoxItem>
+                        <ComboBoxItem>85</ComboBoxItem>
+                        <ComboBoxItem>86</ComboBoxItem>
+                        <ComboBoxItem>87</ComboBoxItem>
+                        <ComboBoxItem>88</ComboBoxItem>
+                        <ComboBoxItem>89</ComboBoxItem>
+                        <ComboBoxItem>90</ComboBoxItem>
+                        <ComboBoxItem>91</ComboBoxItem>
+                        <ComboBoxItem>92</ComboBoxItem>
+                        <ComboBoxItem>93</ComboBoxItem>
+                        <ComboBoxItem>94</ComboBoxItem>
+                        <ComboBoxItem>95</ComboBoxItem>
+                        <ComboBoxItem>96</ComboBoxItem>
+                        <ComboBoxItem>97</ComboBoxItem>
+                        <ComboBoxItem>98</ComboBoxItem>
+                        <ComboBoxItem>99</ComboBoxItem>
+                        <ComboBoxItem>100</ComboBoxItem>
+
+                    </ComboBox>
+                    <ComboBox x:Name="cmb_time" Grid.Column="2" Margin="4" VerticalContentAlignment="Center">
+                        <ComboBoxItem>Weeks</ComboBoxItem>
+                        <ComboBoxItem>Days</ComboBoxItem>
+                        <ComboBoxItem>Months</ComboBoxItem>
+                        <ComboBoxItem>Year</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border  Grid.Row="1" Grid.Column="1" BorderBrush="DodgerBlue" BorderThickness="2" Margin="2" VerticalAlignment="Center">
+            <Grid >
+                <Grid.RowDefinitions>                   
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="55"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="DodgerBlue" Content="Payment" Foreground="White" FontSize="18" VerticalContentAlignment="Center"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Content="Medicin Amount" VerticalContentAlignment="Center" FontSize="18"></Label>
+                <Label Grid.Row="2" Grid.Column="0" Content="Consulting Fee" VerticalContentAlignment="Center" FontSize="18"></Label>
+                <Label Grid.Row="3" Grid.Column="0" Content="Total" VerticalContentAlignment="Center" FontSize="18"></Label>
+                <TextBox x:Name="txt_med_amt" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2" TextChanged="Txt_med_amt_tab4_TextChanged"></TextBox>
+                <TextBox x:Name="txt_con_amt" Grid.Row="2" Grid.Column="1" Text="150" VerticalContentAlignment="Center" FontSize="18" Margin="2" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2" TextChanged="Txt_con_amt_tab4_TextChanged"></TextBox>
+                <TextBox x:Name="txt_tot_amt" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2" IsReadOnly="True" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
+
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+            <Button x:Name="btn_save" Content="Save" Width="200" FontSize="16" Margin="5,0" Click="Btn_save_Click" Style="{StaticResource Round_Corner}"></Button>
+            <Button x:Name="btn_cancel" Content="Cancel" Width="200" FontSize="16"  Margin="5,0" Click="btn_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

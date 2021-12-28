@@ -375,12 +375,12 @@
                                             <TextBlock Text="Price"/>
                                         </DataGridTextColumn.Header>
                                     </DataGridTextColumn>
-                                    <!--     <DataGridTextColumn x:Name="item_RateColumn" Binding="{Binding Rate}"  Width="150" CanUserResize="False">
+                                    <DataGridTextColumn x:Name="item_RateColumn" Binding="{Binding med_total}"  Width="150" CanUserResize="False">
                                         <DataGridTextColumn.Header>
-                                            <TextBlock Text="Rate"/>
+                                            <TextBlock Text="Total Amount"/>
                                         </DataGridTextColumn.Header>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="item_TaxColumn" Binding="{Binding Tax}"  Width="100" CanUserResize="False">
+                                    <!--<DataGridTextColumn x:Name="item_TaxColumn" Binding="{Binding Tax}"  Width="100" CanUserResize="False">
                                         <DataGridTextColumn.Header>
                                             <TextBlock Text="Tax"/>
                                         </DataGridTextColumn.Header>
@@ -593,17 +593,17 @@
                                         <TextBlock Text="Qty"/>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn x:Name="item_priceColumn1" Binding="{Binding med_price}"  Width="100" CanUserResize="False">
+                                <!--<DataGridTextColumn x:Name="item_priceColumn1" Binding="{Binding med_price}"  Width="100" CanUserResize="False">
                                     <DataGridTextColumn.Header>
                                         <TextBlock Text="Price"/>
                                     </DataGridTextColumn.Header>
-                                </DataGridTextColumn>
-                                <!--     <DataGridTextColumn x:Name="item_RateColumn" Binding="{Binding Rate}"  Width="150" CanUserResize="False">
+                                </DataGridTextColumn>-->
+                               <DataGridTextColumn x:Name="item_RateColumn1" Binding="{Binding med_total}"  Width="100" CanUserResize="False">
                                         <DataGridTextColumn.Header>
-                                            <TextBlock Text="Rate"/>
+                                            <TextBlock Text="Amount"/>
                                         </DataGridTextColumn.Header>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="item_TaxColumn" Binding="{Binding Tax}"  Width="100" CanUserResize="False">
+                                <!--     <DataGridTextColumn x:Name="item_TaxColumn" Binding="{Binding Tax}"  Width="100" CanUserResize="False">
                                         <DataGridTextColumn.Header>
                                             <TextBlock Text="Tax"/>
                                         </DataGridTextColumn.Header>

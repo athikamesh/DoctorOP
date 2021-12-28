@@ -19,13 +19,15 @@ namespace DoctorOP
     /// </summary>
     public partial class AddMedicin : Window
     {
-        DOCOPEntities dOPEntities = new DOCOPEntities();
+        DOCOPEntities dOPEntities = new DOCOPEntities();       
+        List<DefaultClass.MedicinList> MList = new List<DefaultClass.MedicinList>();
         public AddMedicin()
         {
             InitializeComponent();
             try
             {
                 txt_medid.Text = GetPateintID().ToString();
+                LoadMedicin();
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -62,6 +64,7 @@ namespace DoctorOP
                         txt_medqty.Text = "";
                         cmb_medtype.Text = "";
                         txt_medid.Text = GetPateintID().ToString();
+                        LoadMedicin();
                     } else { MessageBox.Show("Not Added Successfully"); }
                 }
             }
@@ -78,6 +81,30 @@ namespace DoctorOP
               txt_medqty.Text="";
               cmb_medtype.Text="";
               txt_medid.Text = GetPateintID().ToString();
+            }
+            catch (Exception ex) { }
+        }
+
+        void LoadMedicin()
+        {
+            try
+            {
+                MList.Clear(); int i = 0;
+                Searchgrid.ItemsSource = null;
+                var data = dOPEntities.Medicin_tbl.ToList();
+                foreach (var med in data)
+                {
+                    i++;
+                    DefaultClass.MedicinList MDL = new DefaultClass.MedicinList();
+                    MDL.Id = i;
+                    MDL.med_Id = med.Med_Id;
+                    MDL.med_name = med.Med_Name;
+                    MDL.med_price = med.Med_Price;
+                    MDL.med_type = med.Med_type;
+                    MDL.med_qty = med.Med_Qty;
+                    MList.Add(MDL);
+                }
+                Searchgrid.ItemsSource = MList;
             }
             catch (Exception ex) { }
         }

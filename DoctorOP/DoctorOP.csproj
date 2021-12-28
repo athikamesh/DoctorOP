@@ -67,6 +67,7 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NumericUpDown, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NumericUpDown.3.0.2\lib\NumericUpDown.dll</HintPath>
     </Reference>
@@ -76,6 +77,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -100,59 +102,56 @@
     <Compile Include="Control\LastVisitControl.xaml.cs">
       <DependentUpon>LastVisitControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DCP.Context.cs">
+    <Compile Include="dope.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DCP.Context.tt</DependentUpon>
+      <DependentUpon>dope.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DCP.cs">
+    <Compile Include="dope.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
-    <Compile Include="DCP.Designer.cs">
+    <Compile Include="dope.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DCP.edmx</DependentUpon>
+      <DependentUpon>dope.edmx</DependentUpon>
     </Compile>
     <Compile Include="GetPre_VisitDetail1_Result.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Medicin_tbl.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientDetail.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetail.xaml.cs">
+      <DependentUpon>PatientDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientRefraction.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientSummary.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Patientvisit.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Med_Detail.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Ref_Detail.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient_Visit_Detail.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="Payment_tbl.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="bin\Debug\Report\PatientReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PatientReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Compile Include="SumProcedure_Result.cs">
-      <DependentUpon>DCP.tt</DependentUpon>
+      <DependentUpon>dope.tt</DependentUpon>
     </Compile>
     <Page Include="AddMedicin.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -188,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientConsulting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,17 +233,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="bin\Debug\Report\PatientReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PatientReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="bin\Debug\DoctorOP.exe.config" />
-    <EntityDeploy Include="DCP.edmx">
+    <EntityDeploy Include="dope.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DCP.Designer.cs</LastGenOutput>
+      <LastGenOutput>dope.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DCP.edmx.diagram">
-      <DependentUpon>DCP.edmx</DependentUpon>
+    <None Include="dope.edmx.diagram">
+      <DependentUpon>dope.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -252,34 +250,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\DoctorOP.exe" />
-    <Content Include="bin\Debug\DoctorOP.pdb" />
-    <Content Include="bin\Debug\DOP.mdf">
+    <Content Include="bin\Debug\DOCOP.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="bin\Debug\DOP_log.ldf">
+    <Content Include="bin\Debug\DOCOP_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DOP.mdf</DependentUpon>
+      <DependentUpon>DOCOP.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Debug\EntityFramework.dll" />
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Content Include="DCP.Context.tt">
+    <Content Include="dope.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DCP.edmx</DependentUpon>
-      <LastGenOutput>DCP.Context.cs</LastGenOutput>
+      <DependentUpon>dope.edmx</DependentUpon>
+      <LastGenOutput>dope.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DCP.tt">
+    <Content Include="dope.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DCP.edmx</DependentUpon>
-      <LastGenOutput>DCP.cs</LastGenOutput>
+      <DependentUpon>dope.edmx</DependentUpon>
+      <LastGenOutput>dope.cs</LastGenOutput>
     </Content>
-    <Content Include="DOP.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DOP_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DOP.mdf</DependentUpon>
-    </Content>
+    <Resource Include="Icons\add-user48.png" />
+    <Resource Include="Icons\payment-32.png" />
+    <Resource Include="Icons\show-property-48.png" />
+    <Resource Include="Icons\dose-48.png" />
+    <Resource Include="Icons\eye-drops-64.png" />
+    <Resource Include="Icons\handpill-48.png" />
+    <Resource Include="Icons\medicines-64.png" />
+    <Resource Include="Icons\pills-48 %281%29.png" />
+    <Resource Include="Icons\pills-48.png" />
     <Resource Include="hospital_medical_consultation_icon_140164.ico" />
     <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
     <Resource Include="bin\Debug\EntityFramework.xml" />

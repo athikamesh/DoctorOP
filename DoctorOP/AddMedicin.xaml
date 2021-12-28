@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoctorOP"
         mc:Ignorable="d"
-        Title="AddMedicin" Height="350" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="AddMedicin" Height="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -14,6 +14,7 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130"></ColumnDefinition>
@@ -38,9 +39,55 @@
             <ComboBoxItem>Others</ComboBoxItem>            
         </ComboBox>
         <TextBox x:Name="txt_medqty" Grid.Row="4" Grid.Column="1" Text="" VerticalContentAlignment="Center" FontSize="18" Margin="2"  BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"></TextBox>
-        <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <Button x:Name="btn_save" Content="Save" Width="150" FontSize="16" Margin="5" Click="btn_save_Click" Style="{StaticResource Round_Corner}"></Button>
             <Button x:Name="btn_cancel" Content="Cancel" Width="150" FontSize="16"  Margin="5" Click="btn_cancel_Click" Style="{StaticResource Round_Corner}"></Button>
         </StackPanel>
+        <DataGrid x:Name="Searchgrid"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AlternatingRowBackground="{DynamicResource AlternateColor}"  AutoGenerateColumns="False"  EnableRowVirtualization="True"  GridLinesVisibility="None" Background="White" IsReadOnly="True" FontSize="18" >
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+                    <Setter Property="Foreground" Value="{StaticResource PrimaryFont}" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="FontWeight" Value="Normal"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Width" Value="0"></Setter>
+                    <Setter Property="FontWeight"  Value="Bold"></Setter>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="item_noColumn" Binding="{Binding Id}" Width="50" CanUserResize="False" >
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="No"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="item_SizeColumn" Binding="{Binding med_name}"  Width="280" CanUserResize="False" >
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Medicin Name"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="item_typeColumn" Binding="{Binding med_type}"  Width="100" CanUserResize="False">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Type"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="item_qtyColumn" Binding="{Binding med_qty}"  Width="100" CanUserResize="False">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Qty"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="item_priceColumn" Binding="{Binding med_price}"  Width="100" CanUserResize="False">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Price"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>
